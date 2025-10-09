@@ -87,12 +87,13 @@ export default function RootLayout({
     name: "Euxhenjo Nexhipi",
     alternateName: "Euxhenjo Nex",
     jobTitle: "AI Integration Specialist",
-    description: "AI Integration Specialist helping businesses and creators integrate AI agents, chatbots and automated workflows to save time and get measurable results.",
+    description:
+      "AI Integration Specialist helping businesses and creators integrate AI agents, chatbots and automated workflows to save time and get measurable results.",
     url: "https://euxhenjonex.com",
     email: personalInfo.email,
     sameAs: [
       "https://www.linkedin.com/in/euxhenjonex/",
-      "https://x.com/euxhenjonex"
+      "https://x.com/euxhenjonex",
     ],
     knowsAbout: [
       "Artificial Intelligence",
@@ -107,41 +108,41 @@ export default function RootLayout({
       "WhatsApp Bots",
       "Vector Databases",
       "Next.js",
-      "React"
+      "React",
     ],
     worksFor: {
       "@type": "Organization",
-      "name": "Freelance"
-    }
+      name: "Freelance",
+    },
   };
 
   return (
     <html lang="it" suppressHydrationWarning>
       <head>
+        {/* JSON-LD schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
-        {/* Google Analytics */}
+
+        {/* ✅ Google Analytics */}
         <Script
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-J128K5CWPK"
+          src="https://www.googletagmanager.com/gtag/js?id=G-J128K5CWPX"
         />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-        >
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-J128K5CWPK', {
+            gtag('config', 'G-J128K5CWPX', {
               page_path: window.location.pathname,
             });
           `}
         </Script>
+      </head>
+
+      <body className={`${inter.variable} font-sans antialiased`}>
         <SkipToContent />
         <WebVitals />
         <SmoothScroll />
