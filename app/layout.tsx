@@ -117,6 +117,21 @@ export default function RootLayout({
   return (
     <html lang="it" suppressHydrationWarning>
       <head>
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-J128K5CWPK"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-J128K5CWPK');
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
