@@ -20,6 +20,20 @@
 .DS_Store
 *.pem
 
+# macOS system files
+.AppleDouble
+.LSOverride
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# Temporary / backup files
+*.tmp
+*~
+*.swp
+*.swo
+
 # debug
 npm-debug.log*
 yarn-debug.log*
