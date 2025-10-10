@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SkipToContent from "@/components/ui/SkipToContent";
 import ScrollProgress from "@/components/ui/ScrollProgress";
+import MobileStickyBar from "@/components/ui/MobileStickyBar";
 import { WebVitals } from "@/components/WebVitals";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -158,6 +159,7 @@ export default function RootLayout({
           <Header />
           <main id="main-content">{children}</main>
           <Footer />
+          <MobileStickyBar />
         </ThemeProvider>
       </body>
     </html>
