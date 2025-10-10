@@ -157,10 +157,10 @@ export default function ProjectsSection() {
                     </div>
                   </CardContent>
 
-                  <CardFooter className="flex-col sm:flex-row gap-3 pt-4">
+                  <CardFooter className="pt-4">
                     <ButtonLink
                       size="sm"
-                      className="flex-1 gap-2 rounded-full w-full sm:w-auto justify-center"
+                      className="w-full gap-2 rounded-full justify-center"
                       href={`/projects/${project.id}`}
                     >
                       Vedi Progetto
