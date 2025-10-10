@@ -66,16 +66,16 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-8 flex flex-col justify-between">
+                <div className="p-6 md:p-8 flex flex-col justify-between">
                   <div className="space-y-4">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <Badge variant="outline">{featuredProject.status}</Badge>
                       <Badge variant="secondary">In Evidenza</Badge>
                     </div>
-                    <CardTitle className="text-2xl">
+                    <CardTitle className="text-xl md:text-2xl">
                       {featuredProject.title}
                     </CardTitle>
-                    <CardDescription className="text-base">
+                    <CardDescription className="text-sm md:text-base leading-relaxed">
                       {featuredProject.description}
                     </CardDescription>
                     <div className="flex flex-wrap gap-2">
@@ -87,10 +87,10 @@ export default function ProjectsSection() {
                     </div>
                   </div>
 
-                  <div className="flex gap-3 mt-6">
+                  <div className="flex flex-col sm:flex-row gap-3 mt-6">
                     <ButtonLink
                       href={`/projects/${featuredProject.id}`}
-                      className="rounded-full gap-2"
+                      className="rounded-full gap-2 flex-1 justify-center"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Vedi Progetto
@@ -101,7 +101,7 @@ export default function ProjectsSection() {
                         target="_blank"
                         rel="noopener noreferrer"
                         variant="outline"
-                        className="rounded-full gap-2"
+                        className="rounded-full gap-2 flex-1 justify-center"
                       >
                         <ExternalLink className="w-4 h-4" />
                         Prova il GPT
@@ -135,17 +135,17 @@ export default function ProjectsSection() {
                     />
                   </div>
 
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
                       <Badge variant="outline" className="text-xs">
                         {project.status}
                       </Badge>
                     </div>
-                    <CardTitle className="text-2xl">{project.title}</CardTitle>
+                    <CardTitle className="text-xl md:text-2xl">{project.title}</CardTitle>
                   </CardHeader>
 
-                  <CardContent className="flex-1">
-                    <CardDescription className="mb-4">
+                  <CardContent className="flex-1 pt-0">
+                    <CardDescription className="mb-4 text-sm leading-relaxed">
                       {project.description}
                     </CardDescription>
                     <div className="flex flex-wrap gap-2">
@@ -157,10 +157,10 @@ export default function ProjectsSection() {
                     </div>
                   </CardContent>
 
-                  <CardFooter className="gap-3">
+                  <CardFooter className="flex-col sm:flex-row gap-3 pt-4">
                     <ButtonLink
                       size="sm"
-                      className="flex-1 gap-2 rounded-full"
+                      className="flex-1 gap-2 rounded-full w-full sm:w-auto justify-center"
                       href={`/projects/${project.id}`}
                     >
                       Vedi Progetto
