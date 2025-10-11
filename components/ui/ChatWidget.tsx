@@ -28,8 +28,7 @@ export default function ChatWidget() {
   const suggestedQuestions = [
     "Quali progetti AI hai realizzato?",
     "Come posso automatizzare il mio business?",
-    "Quanto costa un chatbot personalizzato?",
-    "Raccontami del progetto Prompt Master GPT",
+    "Quanto costa creare un chatbot su misura?",
   ];
 
   useEffect(() => {
@@ -207,8 +206,7 @@ export default function ChatWidget() {
                 {messages.length === 0 ? (
                   <div className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      Ciao! 👋 Sono Leo, l'assistente AI di Euxhenjo. Posso aiutarti
-                      a scoprire progetti, servizi e competenze.
+                      Ciao! 👋 Sono Leo, l'assistente AI di Euxhenjo. Ti aiuto a scoprire i suoi progetti, i servizi e come può far crescere il tuo business.
                     </p>
                     <div className="space-y-2">
                       <p className="text-xs font-medium text-muted-foreground">
