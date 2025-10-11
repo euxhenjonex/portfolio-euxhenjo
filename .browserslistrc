@@ -1,0 +1,19 @@
+# Browsers che supportano nativamente le moderne features ES6+
+# Questo ridurrà i polyfills non necessari
+
+# Produzione: browser moderni (ultimi 2 anni)
+[production]
+>0.5%
+last 2 versions
+not dead
+not op_mini all
+Chrome >= 90
+Firefox >= 88
+Safari >= 14
+Edge >= 90
+
+# Sviluppo: browser ancora più moderni
+[development]
+last 1 chrome version
+last 1 firefox version
+last 1 safari version

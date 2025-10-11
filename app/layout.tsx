@@ -120,6 +120,12 @@ export default function RootLayout({
   return (
     <html lang="it" suppressHydrationWarning>
       <head>
+        {/* Resource Hints for Performance Optimization */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://cal.com" />
+        <link rel="dns-prefetch" href="https://vercel.com" />
+        
         {/* JSON-LD schema */}
         <script
           type="application/ld+json"

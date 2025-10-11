@@ -12,6 +12,14 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   compress: true,
+  // Ottimizza polyfills per browser moderni
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Riduci JavaScript non necessario
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
+  },
 };
 
 module.exports = nextConfig;
