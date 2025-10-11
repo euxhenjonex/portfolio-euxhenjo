@@ -322,7 +322,7 @@ export default function ChatWidget() {
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Scrivi un messaggio..."
                     disabled={isLoading}
-                    className="flex-1 text-sm md:text-base"
+                    className="flex-1 text-base"
                   />
                   <Button
                     type="submit"
