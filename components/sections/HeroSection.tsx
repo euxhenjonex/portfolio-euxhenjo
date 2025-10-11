@@ -55,6 +55,7 @@ export default function HeroSection() {
               <AvatarImage
                 src="/images/avatar/profile.webp"
                 alt={`${personalInfo.name} - AI Integration Specialist and Developer`}
+                fetchPriority="high"
               />
               <AvatarFallback>{personalInfo.firstName.charAt(0)}</AvatarFallback>
             </Avatar>

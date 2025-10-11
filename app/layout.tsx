@@ -126,6 +126,15 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cal.com" />
         <link rel="dns-prefetch" href="https://vercel.com" />
         
+        {/* Preload Critical Font */}
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        
         {/* JSON-LD schema */}
         <script
           type="application/ld+json"

@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
-import ServicesSection from "@/components/sections/ServicesSection";
-import AboutSection from "@/components/sections/AboutSection";
 
-// Lazy load below-the-fold sections
+// Lazy load below-the-fold sections with priority
+const AboutSection = dynamic(() => import("@/components/sections/AboutSection"), {
+  loading: () => <div className="min-h-[50vh]" />,
+});
+const ServicesSection = dynamic(() => import("@/components/sections/ServicesSection"), {
+  loading: () => <div className="min-h-screen" />,
+});
 const ProcessSection = dynamic(() => import("@/components/sections/ProcessSection"), {
   loading: () => <div className="min-h-[50vh]" />,
 });
