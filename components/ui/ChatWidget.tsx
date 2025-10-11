@@ -177,7 +177,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-x-4 bottom-20 md:bottom-24 md:right-6 md:left-auto z-50 w-auto md:w-[400px] max-h-[calc(100vh-8rem)] md:max-h-[600px]"
+            className="fixed inset-x-4 bottom-20 md:bottom-24 md:right-6 md:left-auto z-50 w-auto md:w-[400px] h-[calc(100vh-8rem)] md:h-[600px]"
           >
             <div className="bg-background border rounded-lg shadow-2xl overflow-hidden h-full flex flex-col">
               {/* Header */}
@@ -202,7 +202,8 @@ export default function ChatWidget() {
               </div>
 
               {/* Messages */}
-              <ScrollArea className="flex-1 p-4" ref={scrollRef}>
+              <div className="flex-1 overflow-hidden">
+                <ScrollArea className="h-full p-4" ref={scrollRef}>
                 {messages.length === 0 ? (
                   <div className="space-y-4">
                     <p className="text-sm text-muted-foreground">
@@ -310,9 +311,10 @@ export default function ChatWidget() {
                   </div>
                 )}
               </ScrollArea>
+              </div>
 
               {/* Input */}
-              <form onSubmit={handleSubmit} className="p-3 md:p-4 border-t bg-background">
+              <form onSubmit={handleSubmit} className="p-3 md:p-4 border-t bg-background flex-shrink-0">
                 <div className="flex gap-2">
                   <Input
                     ref={inputRef}
