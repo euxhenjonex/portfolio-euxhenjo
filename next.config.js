@@ -23,8 +23,6 @@ const nextConfig = {
   // Riduci JavaScript non necessario
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react'],
-    // Abilita ottimizzazioni avanzate
-    optimizeCss: true,
   },
   // Headers per caching aggressivo
   async headers() {
