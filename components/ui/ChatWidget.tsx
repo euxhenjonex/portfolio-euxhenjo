@@ -191,6 +191,14 @@ export default function ChatWidget() {
                     Il tuo assistente personale
                   </p>
                 </div>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsOpen(false)}
+                  className="h-8 w-8 rounded-full hover:bg-primary-foreground/20 text-primary-foreground"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
               </div>
 
               {/* Messages */}
