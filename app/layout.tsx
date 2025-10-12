@@ -5,7 +5,6 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SkipToContent from "@/components/ui/SkipToContent";
-import ScrollProgress from "@/components/ui/ScrollProgress";
 import ChatWidget from "@/components/ui/ChatWidget";
 import { WebVitals } from "@/components/WebVitals";
 import { SmoothScroll } from "@/components/SmoothScroll";
@@ -175,7 +174,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
-          <ScrollProgress />
           <Toaster position="bottom-right" richColors />
           <Header />
           <main id="main-content">{children}</main>
