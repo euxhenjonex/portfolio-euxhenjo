@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { Calendar } from "lucide-react";
 import { services } from "@/lib/data";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -110,8 +111,9 @@ export default function ServicesSection() {
               href="https://cal.com/euxhenjonex/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full px-8 py-6 text-sm font-medium uppercase tracking-wider"
+              className="rounded-full px-8 py-6 text-sm font-medium uppercase tracking-wider gap-2"
             >
+              <Calendar className="w-4 h-4" />
               Prenota una call gratuita
             </ButtonLink>
             <p className="text-sm text-muted-foreground/70 mt-4">

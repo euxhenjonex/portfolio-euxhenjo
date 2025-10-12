@@ -176,7 +176,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed inset-x-4 bottom-20 md:bottom-24 md:right-6 md:left-auto z-50 w-auto md:w-[400px] h-[calc(100vh-8rem)] md:h-[600px]"
+            className="fixed inset-x-4 bottom-20 md:bottom-24 md:right-6 md:left-auto z-50 w-auto md:w-[400px] h-[calc(100vh-8rem)] md:h-[min(600px,calc(100vh-8rem))]"
           >
             <div className="bg-background border rounded-lg shadow-2xl overflow-hidden h-full flex flex-col">
               {/* Header */}
