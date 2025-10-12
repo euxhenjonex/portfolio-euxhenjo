@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import Container from "../layout/Container";
@@ -12,12 +11,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 md:py-32 bg-muted/30">
       <Container>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           {/* Section Title */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Chi Sono</h2>
@@ -26,13 +20,7 @@ export default function AboutSection() {
           {/* Content: 2 Columns Layout */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
             {/* Left: Professional Photo */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative w-full aspect-[3/4] max-w-md mx-auto"
-            >
+            <div className="relative w-full aspect-[3/4] max-w-md mx-auto">
               {/* Glow effect dietro la foto */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-3xl rounded-2xl" />
 
@@ -49,16 +37,10 @@ export default function AboutSection() {
                   priority
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* Right: Bio Text */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="space-y-6"
-            >
+            <div className="space-y-6">
               <div className="space-y-6">
                 <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
                   <p>
@@ -76,13 +58,7 @@ export default function AboutSection() {
                 </div>
 
                 {/* Bento Card - Cosa sto studiando */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/5 via-background to-primary/5 border border-primary/10"
-                >
+                <div className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/5 via-background to-primary/5 border border-primary/10">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl blur-xl -z-10" />
 
@@ -121,11 +97,11 @@ export default function AboutSection() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

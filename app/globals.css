@@ -88,6 +88,24 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  /* Optimize for Safari */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce blur complexity on Safari */
+@supports (-webkit-hyphens:none) {
+  .blur-3xl {
+    filter: blur(48px);
+  }
+  .blur-xl {
+    filter: blur(20px);
+  }
 }
 
 /* Shimmer animation for skeleton loaders */
@@ -102,6 +120,7 @@ html {
 
 .animate-shimmer {
   animation: shimmer 2s infinite;
+  will-change: transform;
 }
 
 /* Enhanced focus indicators for accessibility */
@@ -119,19 +138,4 @@ button:focus-visible {
   @apply min-h-[44px] min-w-[44px] inline-flex items-center justify-center;
 }
 
-/* Gradient animation for hero text */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient {
-  animation: gradient 8s ease infinite;
-}
+/* Remove heavy gradient animation - use static gradient instead */

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -30,13 +29,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 md:py-32">
       <Container>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-12"
-        >
+        <div className="space-y-12">
           {/* Section Title */}
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -116,11 +109,7 @@ export default function ProjectsSection() {
           {/* Other Projects Grid */}
           <div className="grid md:grid-cols-2 gap-6">
             {otherProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                whileHover={{ y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
+              <div key={project.id} className="transition-transform hover:-translate-y-1">
                 <Card className="h-full flex flex-col hover:border-foreground/20 transition-colors overflow-hidden">
                   {/* Project Image */}
                   <div className="relative w-full pt-[56.25%] bg-black">
@@ -168,10 +157,10 @@ export default function ProjectsSection() {
                     </ButtonLink>
                   </CardFooter>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
