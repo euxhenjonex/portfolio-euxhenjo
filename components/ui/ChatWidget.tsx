@@ -148,12 +148,22 @@ export default function ChatWidget() {
             ) : (
               <motion.div
                 key="open"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{
+                  scale: 1,
+                  opacity: 1,
+                  rotate: [0, -10, 10, -10, 0]
+                }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{
+                  duration: 0.3,
+                  rotate: {
+                    duration: 0.5,
+                    ease: "easeInOut"
+                  }
+                }}
               >
-                <MessageCircle className="h-6 w-6" />
+                <Sparkles className="h-6 w-6" />
               </motion.div>
             )}
           </AnimatePresence>
