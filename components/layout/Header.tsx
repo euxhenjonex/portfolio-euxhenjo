@@ -40,11 +40,32 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Chi Sono", href: "/#about", icon: User },
-    { name: "Servizi", href: "/#services", icon: Briefcase },
-    { name: "Progetti", href: "/#projects", icon: FolderOpen },
-    { name: "Contatti", href: "/#contact", icon: Mail },
+    { name: "Chi Sono", href: "#about", icon: User },
+    { name: "Servizi", href: "#services", icon: Briefcase },
+    { name: "Progetti", href: "#projects", icon: FolderOpen },
+    { name: "Contatti", href: "#contact", icon: Mail },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+
+    const hash = href.replace('#', '');
+    const element = document.getElementById(hash);
+
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      window.history.pushState(null, '', `#${hash}`);
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   return (
     <header
@@ -74,6 +95,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="group flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-full hover:bg-muted/50 transition-all duration-300"
                 >
                   <Icon className="h-4 w-4 opacity-60" />
@@ -158,7 +180,7 @@ export default function Header() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="flex items-center gap-2 text-sm font-medium px-3 py-3 rounded-2xl hover:bg-muted/50 transition-all duration-300 min-h-[44px]"
                   >
                     <Icon className="h-4 w-4 opacity-60" />
