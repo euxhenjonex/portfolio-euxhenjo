@@ -5,13 +5,12 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SkipToContent from "@/components/ui/SkipToContent";
-import ChatWidget from "@/components/ui/ChatWidget";
 import { WebVitals } from "@/components/WebVitals";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
 import { personalInfo } from "@/lib/data";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ChatWidget, SpeedInsights } from "@/components/ClientComponents";
 
 const inter = Inter({
   subsets: ["latin"],

@@ -1,12 +1,23 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import { projects } from "@/lib/data";
 import ProjectHero from "@/components/project/ProjectHero";
 import ProjectOverview from "@/components/project/ProjectOverview";
-import ProjectChallenge from "@/components/project/ProjectChallenge";
-import ProjectTechStack from "@/components/project/ProjectTechStack";
-import ProjectResults from "@/components/project/ProjectResults";
-import ProjectCTA from "@/components/project/ProjectCTA";
+
+// Lazy load below-the-fold project components for better performance
+const ProjectChallenge = dynamic(() => import("@/components/project/ProjectChallenge"), {
+  loading: () => <div className="min-h-[50vh]" />,
+});
+const ProjectTechStack = dynamic(() => import("@/components/project/ProjectTechStack"), {
+  loading: () => <div className="min-h-[40vh]" />,
+});
+const ProjectResults = dynamic(() => import("@/components/project/ProjectResults"), {
+  loading: () => <div className="min-h-[50vh]" />,
+});
+const ProjectCTA = dynamic(() => import("@/components/project/ProjectCTA"), {
+  loading: () => <div className="min-h-[30vh]" />,
+});
 
 interface ProjectPageProps {
   params: Promise<{
