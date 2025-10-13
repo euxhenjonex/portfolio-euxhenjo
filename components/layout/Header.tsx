@@ -54,6 +54,7 @@ export default function Header() {
           ? "bg-background/95 backdrop-blur-xl border-b border-border"
           : "bg-transparent"
       )}
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
       <Container>
         <nav className="flex items-center justify-center h-16 md:h-20 relative">
