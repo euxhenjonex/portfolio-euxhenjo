@@ -14,8 +14,8 @@ export default function ContactSection() {
       toast.success("Email copiata negli appunti!", {
         description: personalInfo.email,
       });
-    } catch (error) {
-      toast.error("Impossibile copiare l'email", {
+    } catch (_err) {
+      toast.error("Impossibile copiare l&apos;email", {
         description: "Riprova di nuovo",
       });
     }
@@ -34,7 +34,7 @@ export default function ContactSection() {
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold">Pronto a Iniziare il Tuo Progetto?</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Prenota una consulenza gratuita di 30 minuti per discutere delle tue esigenze. Nessun impegno richiesto. Esploriamo insieme come l'AI può trasformare il tuo business.
+              Prenota una consulenza gratuita di 30 minuti per discutere delle tue esigenze. Nessun impegno richiesto. Esploriamo insieme come l&apos;AI può trasformare il tuo business.
             </p>
           </div>
 

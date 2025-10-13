@@ -33,8 +33,8 @@ export default function Footer() {
       toast.success("Email copiata negli appunti!", {
         description: personalInfo.email,
       });
-    } catch (error) {
-      toast.error("Impossibile copiare l'email", {
+    } catch (_err) {
+      toast.error("Impossibile copiare l&apos;email", {
         description: "Riprova di nuovo",
       });
     }

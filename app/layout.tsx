@@ -74,13 +74,14 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.json",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
 };
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+} as const;
 
 export default function RootLayout({
   children,
@@ -170,9 +171,10 @@ export default function RootLayout({
         <SpeedInsights />
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange={false}
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange={true}
+          forcedTheme="dark"
         >
           <Toaster position="bottom-right" richColors />
           <Header />

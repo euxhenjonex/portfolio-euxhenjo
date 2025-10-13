@@ -32,8 +32,8 @@ export default function ServicesSection() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Come Posso Aiutarti
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Trasforma il tuo business con soluzioni AI che fanno risparmiare tempo, riducono i costi e sbloccano nuove possibilità.
+              <p className="text-lg text-muted-foreground">
+                Trasforma il tuo business con soluzioni AI che fanno risparmiare tempo, riducono i costi e sbloccano nuove possibilità.
             </p>
           </div>
 
@@ -104,7 +104,7 @@ export default function ServicesSection() {
             className="text-center pt-8"
           >
             <p className="text-lg text-muted-foreground mb-6">
-              Pronto a integrare l'AI nel tuo workflow?
+              Pronto a integrare l&apos;AI nel tuo workflow?
             </p>
             <ButtonLink
               size="lg"

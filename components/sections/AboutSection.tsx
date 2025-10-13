@@ -1,9 +1,20 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import Container from "../layout/Container";
 import ImageSkeleton from "@/components/ui/ImageSkeleton";
+
+// Varianti di animazione leggere
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
 
 export default function AboutSection() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -11,16 +22,23 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 md:py-32 bg-muted/30">
       <Container>
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {/* Section Title */}
-          <div className="text-center mb-12">
+          <motion.div variants={fadeInUp} className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Chi Sono</h2>
-          </div>
+          </motion.div>
 
           {/* Content: 2 Columns Layout */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
             {/* Left: Professional Photo */}
-            <div className="relative w-full aspect-[3/4] max-w-md mx-auto">
+            <motion.div
+              variants={fadeInUp}
+              className="relative w-full aspect-[3/4] max-w-md mx-auto"
+            >
               {/* Glow effect dietro la foto */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-3xl rounded-2xl" />
 
@@ -37,14 +55,14 @@ export default function AboutSection() {
                   priority
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Right: Bio Text */}
-            <div className="space-y-6">
+            <motion.div variants={fadeInUp} className="space-y-6">
               <div className="space-y-6">
                 <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Sono <span className="text-foreground font-semibold">uno specialista in integrazione AI</span>: trasformo l'intelligenza artificiale in strumenti reali che semplificano il lavoro e generano valore misurabile.
+                    Sono <span className="text-foreground font-semibold">uno specialista in integrazione AI</span>: trasformo l&apos;intelligenza artificiale in strumenti reali che semplificano il lavoro e generano valore misurabile.
                   </p>
 
                   <p>
@@ -58,13 +76,19 @@ export default function AboutSection() {
                 </div>
 
                 {/* Bento Card - Cosa sto studiando */}
-                <div className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/5 via-background to-primary/5 border border-primary/10">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/5 via-background to-primary/5 border border-primary/10"
+                >
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl blur-xl -z-10" />
 
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                      <div className="w-2 h-2 rounded-full bg-primary opacity-100" />
                       <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
                         Attualmente sto studiando
                       </h3>
@@ -97,11 +121,11 @@ export default function AboutSection() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

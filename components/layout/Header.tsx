@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X as CloseIcon, Linkedin, Moon, Sun, User, FolderOpen, Mail, Briefcase } from "lucide-react";
+import { Menu, X as CloseIcon, Linkedin, User, FolderOpen, Mail, Briefcase } from "lucide-react";
 
 // X (Twitter) Icon Component
 const XIcon = ({ className }: { className?: string }) => (
@@ -15,7 +15,6 @@ const XIcon = ({ className }: { className?: string }) => (
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
-import { useTheme } from "next-themes";
 import { Button, ButtonLink } from "@/components/ui/button";
 import {
   Tooltip,
@@ -30,11 +29,8 @@ import Container from "./Container";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -89,7 +85,7 @@ export default function Header() {
             })}
           </div>
 
-          {/* Right Side - Social + Dark Mode */}
+          {/* Right Side - Social Links */}
           <TooltipProvider delayDuration={200}>
             <div className="hidden md:flex absolute right-0 items-center gap-2">
               <Tooltip>
@@ -129,48 +125,11 @@ export default function Header() {
                   <p>Seguimi su X</p>
                 </TooltipContent>
               </Tooltip>
-
-              {/* Dark Mode Toggle */}
-              {mounted && (
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                      aria-label="Toggle theme"
-                    >
-                      {theme === "dark" ? (
-                        <Sun className="h-5 w-5" />
-                      ) : (
-                        <Moon className="h-5 w-5" />
-                      )}
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{theme === "dark" ? "Modalità chiara" : "Modalità scura"}</p>
-                  </TooltipContent>
-                </Tooltip>
-              )}
             </div>
           </TooltipProvider>
 
-          {/* Mobile Menu Button + Dark Mode */}
+          {/* Mobile Menu Button */}
           <div className="flex md:hidden absolute right-0 items-center gap-2">
-            {mounted && (
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                aria-label="Toggle theme"
-              >
-                {theme === "dark" ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
-              </Button>
-            )}
             <Button
               variant="ghost"
               size="icon"

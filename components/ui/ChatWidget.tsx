@@ -206,7 +206,7 @@ export default function ChatWidget() {
                 {messages.length === 0 ? (
                   <div className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      Ciao! 👋 Sono Leo, l'assistente AI di Euxhenjo. Ti aiuto a scoprire i suoi progetti, i servizi e come può far crescere il tuo business.
+                      Ciao! 👋 Sono Leo, l&apos;assistente AI di Euxhenjo. Ti aiuto a scoprire i suoi progetti, i servizi e come può far crescere il tuo business.
                     </p>
                     <div className="space-y-2">
                       <p className="text-xs font-medium text-muted-foreground">

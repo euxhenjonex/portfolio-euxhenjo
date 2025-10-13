@@ -76,9 +76,7 @@ export default function TestimonialsSection() {
                       <Quote className="w-8 h-8 text-muted-foreground/40" />
 
                       {/* Testimonial Quote */}
-                      <p className="text-base leading-relaxed">
-                        "{testimonial.quote}"
-                      </p>
+                      <p className="text-base leading-relaxed">{`“${testimonial.quote}”`}</p>
 
                       {/* Author Info */}
                       <div className="flex items-center gap-3 pt-4 border-t">
@@ -127,9 +125,7 @@ export default function TestimonialsSection() {
                           <Quote className="w-8 h-8 text-muted-foreground/40" />
 
                           {/* Testimonial Quote */}
-                          <p className="text-base leading-relaxed">
-                            "{testimonial.quote}"
-                          </p>
+                          <p className="text-base leading-relaxed">{`“${testimonial.quote}”`}</p>
 
                           {/* Author Info */}
                           <div className="flex items-center gap-3 pt-4 border-t">
