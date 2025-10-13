@@ -58,17 +58,14 @@ export default function ServicesSection() {
                 >
                   {/* Card Container */}
                   <div className="relative h-full rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg hover:shadow-xl transition-all duration-300">
-                    {/* Service Image with Gradient Overlay */}
+                    {/* Service Image */}
                     <div className="relative h-48 overflow-hidden">
-                      {/* Gradient overlay soft */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
-
                       {!loadedImages[service.id] && <ImageSkeleton />}
                       <Image
                         src={service.image}
                         alt={`${service.title} - Mockup showcasing ${service.examples[0]}`}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="object-cover"
                         sizes="(max-width: 768px) 100vw, 33vw"
                         onLoad={() => handleImageLoad(service.id)}
                       />

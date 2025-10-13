@@ -49,10 +49,10 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/98 border-b border-border",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled || isMobileMenuOpen
-          ? "shadow-sm"
-          : ""
+          ? "bg-background shadow-lg border-b border-border"
+          : "bg-transparent border-transparent"
       )}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
