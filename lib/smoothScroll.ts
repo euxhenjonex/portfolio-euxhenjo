@@ -1,27 +1,36 @@
 export function initSmoothScroll() {
-  // Handle all anchor links with smooth scroll and offset
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const href = anchor.getAttribute('href');
-      if (!href || href === '#') return;
+  // Handle both /#section and #section anchor links with smooth scroll
+  const handleClick = (e: Event) => {
+    const anchor = e.currentTarget as HTMLAnchorElement;
+    const href = anchor.getAttribute('href');
+    if (!href) return;
 
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
+    // Extract hash from /#section or #section
+    const hash = href.includes('#') ? href.split('#')[1] : '';
+    if (!hash || hash === '') return;
 
-        // Calculate offset for fixed header (80px header height + 20px margin)
-        const headerOffset = 100;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    const target = document.getElementById(hash);
+    if (target) {
+      e.preventDefault();
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+      // Calculate offset for fixed header (80px header height + 20px margin)
+      const headerOffset = 100;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        // Update URL without jumping
-        history.pushState(null, '', href);
-      }
-    });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Update URL without jumping
+      const newUrl = window.location.pathname === '/' ? `#${hash}` : `/#${hash}`;
+      history.pushState(null, '', newUrl);
+    }
+  };
+
+  // Select both /#section and #section patterns
+  document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', handleClick);
   });
 }
