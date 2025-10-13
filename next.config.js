@@ -27,7 +27,13 @@ const nextConfig = {
   },
   // Riduci JavaScript non necessario
   experimental: {
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ['framer-motion', 'lucide-react', 'react-markdown', 'remark-gfm'],
+  },
+  // Abilita modularizeImports per ridurre bundle
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+    },
   },
   // Headers per caching aggressivo
   async headers() {

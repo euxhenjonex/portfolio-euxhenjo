@@ -33,7 +33,7 @@ export default function Footer() {
       toast.success("Email copiata negli appunti!", {
         description: personalInfo.email,
       });
-    } catch (_err) {
+    } catch {
       toast.error("Impossibile copiare l&apos;email", {
         description: "Riprova di nuovo",
       });
@@ -113,7 +113,7 @@ export default function Footer() {
           <div className="w-full max-w-xs h-px bg-border" />
 
           {/* Copyright */}
-          <p className="text-xs text-muted-foreground/70 text-center">
+          <p className="text-xs text-muted-foreground text-center">
             © {currentYear} {personalInfo.name} · Tutti i diritti riservati
           </p>
         </div>

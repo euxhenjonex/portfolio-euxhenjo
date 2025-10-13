@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Loader2, Sparkles } from "lucide-react";
+import { X, Send, Loader2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -132,6 +132,7 @@ export default function ChatWidget() {
         <Button
           onClick={() => setIsOpen(!isOpen)}
           size="lg"
+          aria-label={isOpen ? "Chiudi chat AI" : "Apri chat AI"}
           className="h-12 w-12 md:h-14 md:w-14 rounded-full shadow-lg hover:shadow-xl transition-shadow group relative"
         >
           <AnimatePresence mode="wait">
@@ -204,6 +205,7 @@ export default function ChatWidget() {
                   variant="ghost"
                   size="icon"
                   onClick={() => setIsOpen(false)}
+                  aria-label="Chiudi chat"
                   className="h-10 w-10 min-h-[44px] min-w-[44px] rounded-full hover:bg-primary-foreground/20 text-primary-foreground"
                 >
                   <X className="h-4 w-4" />
@@ -229,6 +231,7 @@ export default function ChatWidget() {
                             setInput(q);
                             handleSubmit(e, q);
                           }}
+                          aria-label={`Domanda suggerita: ${q}`}
                           className="w-full text-left text-xs p-3 rounded-2xl ring-1 ring-border/50 hover:shadow-lg hover:ring-border transition-all duration-300 min-h-[44px]"
                         >
                           {q}
@@ -336,6 +339,7 @@ export default function ChatWidget() {
                     type="submit"
                     size="icon"
                     disabled={isLoading || !input.trim()}
+                    aria-label="Invia messaggio"
                     className="min-h-[44px] min-w-[44px] rounded-full"
                   >
                     {isLoading ? (

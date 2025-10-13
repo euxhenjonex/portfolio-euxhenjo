@@ -78,8 +78,8 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
+  userScalable: true,
   viewportFit: "cover",
 } as const;
 
@@ -139,6 +139,15 @@ export default function RootLayout({
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
+        />
+
+        {/* Preload LCP Image */}
+        <link
+          rel="preload"
+          href="/images/avatar/profile.webp"
+          as="image"
+          type="image/webp"
+          fetchPriority="high"
         />
         
         {/* JSON-LD schema */}

@@ -8,24 +8,24 @@ import { Calendar, ArrowRight } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import Container from "../layout/Container";
 
-// Varianti di animazione leggere
+// Varianti di animazione leggere - ottimizzate per LCP
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.5,
-      staggerChildren: 0.1,
+      duration: 0.3,
+      staggerChildren: 0.05,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 5 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4 },
+    transition: { duration: 0.25 },
   },
 };
 
