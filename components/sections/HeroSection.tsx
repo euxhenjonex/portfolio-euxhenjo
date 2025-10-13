@@ -32,21 +32,13 @@ const itemVariants = {
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pb-20 px-4 overflow-hidden">
-      {/* Background Gradient Animato - Leggero */}
+      {/* Background Gradient Statico - Ottimizzato Safari */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" />
 
-        {/* Effetti Glow Animati - Solo opacity per performance */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
-          animate={{ opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/15 rounded-full blur-3xl"
-          animate={{ opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
+        {/* Effetti Glow Statici - Safari Friendly */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-2xl opacity-40" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-2xl opacity-30" />
       </div>
 
       <Container className="relative z-10">
@@ -58,8 +50,8 @@ export default function HeroSection() {
         >
           {/* Avatar con stile moderno iOS */}
           <motion.div variants={itemVariants} className="mb-3 relative">
-            {/* Glow sottile */}
-            <div className="absolute inset-0 bg-primary/30 rounded-[28%] blur-xl" />
+            {/* Glow senza blur - Safari friendly */}
+            <div className="absolute inset-0 bg-primary/20 rounded-[28%] opacity-50" />
 
             {/* Avatar container con bordo arrotondato iOS-style */}
             <Avatar className="relative w-20 h-20 md:w-24 md:h-24 rounded-[28%] ring-2 ring-primary/30 shadow-lg">
@@ -90,7 +82,7 @@ export default function HeroSection() {
 
           {/* Main Headline */}
           <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] tracking-tight mb-6 px-4">
-            <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
               {personalInfo.headline}
             </span>
           </motion.h1>

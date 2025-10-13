@@ -98,10 +98,8 @@ section[id] {
   scroll-margin-top: 80px;
 }
 
-/* Safe area insets for mobile browsers */
-body {
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+/* Safe area insets for mobile browsers - moved to specific elements */
+header, footer {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
@@ -112,13 +110,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Reduce blur complexity on Safari */
+/* Safari-specific optimizations */
 @supports (-webkit-hyphens:none) {
+  /* Reduce blur for better performance */
   .blur-3xl {
-    filter: blur(48px);
+    filter: blur(32px);
+  }
+  .blur-2xl {
+    filter: blur(24px);
   }
   .blur-xl {
-    filter: blur(20px);
+    filter: blur(16px);
+  }
+
+  /* Fix text gradient rendering */
+  .bg-clip-text {
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  /* Disable heavy backdrop blur on Safari */
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-3xl {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 }
 
@@ -134,7 +150,7 @@ body {
 
 .animate-shimmer {
   animation: shimmer 2s infinite;
-  will-change: transform;
+  /* will-change removed for Safari compatibility */
 }
 
 /* Enhanced focus indicators for accessibility */

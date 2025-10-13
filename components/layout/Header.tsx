@@ -51,7 +51,7 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled || isMobileMenuOpen
-          ? "bg-background/95 backdrop-blur-xl border-b border-border"
+          ? "bg-background/98 border-b border-border shadow-sm"
           : "bg-transparent"
       )}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
@@ -150,7 +150,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div id="mobile-menu" className="md:hidden py-4 border-t animate-fade-in bg-background backdrop-blur-xl">
+          <div id="mobile-menu" className="md:hidden py-4 border-t animate-fade-in bg-background">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => {
                 const Icon = link.icon;
