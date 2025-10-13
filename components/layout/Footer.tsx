@@ -52,7 +52,7 @@ export default function Footer() {
                   <ButtonLink
                     variant="ghost"
                     size="icon"
-                    className="hover:opacity-70"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
                     href={socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -71,7 +71,7 @@ export default function Footer() {
                   <ButtonLink
                     variant="ghost"
                     size="icon"
-                    className="hover:opacity-70"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
                     href={socialLinks.x}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -90,7 +90,7 @@ export default function Footer() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="hover:opacity-70"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
                     onClick={handleEmailClick}
                     aria-label="Copy email to clipboard"
                   >

@@ -188,10 +188,10 @@ export default function ChatWidget() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed inset-x-4 bottom-20 md:bottom-24 md:right-6 md:left-auto z-50 w-auto md:w-[400px] h-[calc(100vh-8rem)] md:h-[min(600px,calc(100vh-8rem))]"
           >
-            <div className="bg-background border rounded-lg shadow-2xl overflow-hidden h-full flex flex-col">
+            <div className="bg-background ring-1 ring-border/50 rounded-2xl shadow-2xl overflow-hidden h-full flex flex-col">
               {/* Header */}
-              <div className="bg-primary text-primary-foreground p-4 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-primary-foreground/20 flex items-center justify-center">
+              <div className="bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground p-4 flex items-center gap-3">
+                <div className="h-10 w-10 rounded-2xl bg-primary-foreground/20 flex items-center justify-center">
                   <Sparkles className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
@@ -204,7 +204,7 @@ export default function ChatWidget() {
                   variant="ghost"
                   size="icon"
                   onClick={() => setIsOpen(false)}
-                  className="h-8 w-8 rounded-full hover:bg-primary-foreground/20 text-primary-foreground"
+                  className="h-10 w-10 min-h-[44px] min-w-[44px] rounded-full hover:bg-primary-foreground/20 text-primary-foreground"
                 >
                   <X className="h-4 w-4" />
                 </Button>
@@ -229,7 +229,7 @@ export default function ChatWidget() {
                             setInput(q);
                             handleSubmit(e, q);
                           }}
-                          className="w-full text-left text-xs p-2 rounded-md border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+                          className="w-full text-left text-xs p-3 rounded-2xl ring-1 ring-border/50 hover:shadow-lg hover:ring-border transition-all duration-300 min-h-[44px]"
                         >
                           {q}
                         </button>
@@ -250,7 +250,7 @@ export default function ChatWidget() {
                       >
                         <div
                           className={cn(
-                            "rounded-lg px-3 py-2 text-sm max-w-[85%] prose-sm",
+                            "rounded-2xl px-3 py-2 text-sm max-w-[85%] prose-sm",
                             message.role === "user"
                               ? "bg-primary text-primary-foreground"
                               : "bg-muted"
@@ -288,7 +288,7 @@ export default function ChatWidget() {
                     ))}
                     {isTyping && (
                       <div className="flex gap-2 justify-start">
-                        <div className="rounded-lg px-4 py-3 text-sm bg-muted">
+                        <div className="rounded-2xl px-4 py-3 text-sm bg-muted">
                           <div className="flex items-center gap-1">
                             <motion.div
                               animate={{ scale: [1, 1.2, 1] }}
@@ -311,7 +311,7 @@ export default function ChatWidget() {
                     )}
                     {isLoading && !isTyping && (
                       <div className="flex gap-2 justify-start">
-                        <div className="rounded-lg px-3 py-2 text-sm bg-muted">
+                        <div className="rounded-2xl px-3 py-2 text-sm bg-muted">
                           <Loader2 className="h-4 w-4 animate-spin" />
                         </div>
                       </div>
@@ -336,6 +336,7 @@ export default function ChatWidget() {
                     type="submit"
                     size="icon"
                     disabled={isLoading || !input.trim()}
+                    className="min-h-[44px] min-w-[44px] rounded-full"
                   >
                     {isLoading ? (
                       <Loader2 className="h-4 w-4 animate-spin" />

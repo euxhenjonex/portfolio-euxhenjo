@@ -90,6 +90,12 @@ html {
   scroll-behavior: smooth;
   /* Optimize for Safari */
   -webkit-overflow-scrolling: touch;
+  scroll-padding-top: 80px; /* Offset for fixed header */
+}
+
+/* Scroll offset for sections with IDs */
+section[id] {
+  scroll-margin-top: 80px;
 }
 
 /* Safe area insets for mobile browsers */
@@ -147,3 +153,19 @@ button:focus-visible {
 }
 
 /* Remove heavy gradient animation - use static gradient instead */
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+}

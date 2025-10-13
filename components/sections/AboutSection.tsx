@@ -39,9 +39,6 @@ export default function AboutSection() {
               variants={fadeInUp}
               className="relative w-full aspect-[3/4] max-w-md mx-auto"
             >
-              {/* Glow effect dietro la foto */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-3xl rounded-2xl" />
-
               {/* Photo container */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden ring-1 ring-border/50 shadow-2xl">
                 {!imageLoaded && <ImageSkeleton />}
@@ -83,9 +80,6 @@ export default function AboutSection() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/5 via-background to-primary/5 border border-primary/10"
                 >
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl blur-xl -z-10" />
-
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-primary opacity-100" />

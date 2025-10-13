@@ -1,21 +1,24 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { projects } from "@/lib/data";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ButtonLink } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ImageSkeleton from "@/components/ui/ImageSkeleton";
 import Container from "../layout/Container";
+
+// Varianti di animazione leggere
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
 
 export default function ProjectsSection() {
   const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
@@ -29,23 +32,34 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 md:py-32">
       <Container>
-        <div className="space-y-12">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="space-y-12"
+        >
           {/* Section Title */}
-          <div className="text-center">
+          <motion.div variants={fadeInUp} className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Progetti in Evidenza
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Una selezione di progetti che mostrano le mie competenze
             </p>
-          </div>
+          </motion.div>
 
           {/* Featured Project */}
           {featuredProject && (
-            <Card className="overflow-hidden border-2 hover:border-foreground/20 transition-colors">
+            <motion.div
+              variants={fadeInUp}
+              className="relative rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Project Image */}
-                <div className="relative w-full pt-[56.25%] bg-black border-b md:border-b-0 md:border-r">
+                <div className="relative w-full pt-[56.25%] overflow-hidden">
+                  {/* Gradient overlay soft */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
+
                   {!loadedImages[featuredProject.id] && <ImageSkeleton />}
                   <Image
                     src={featuredProject.image}
@@ -65,12 +79,12 @@ export default function ProjectsSection() {
                       <Badge variant="outline">{featuredProject.status}</Badge>
                       <Badge variant="secondary">In Evidenza</Badge>
                     </div>
-                    <CardTitle className="text-xl md:text-2xl">
+                    <h3 className="text-xl md:text-2xl font-bold">
                       {featuredProject.title}
-                    </CardTitle>
-                    <CardDescription className="text-sm md:text-base leading-relaxed">
+                    </h3>
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                       {featuredProject.description}
-                    </CardDescription>
+                    </p>
                     <div className="flex flex-wrap gap-2">
                       {featuredProject.tags.map((tag) => (
                         <Badge key={tag} variant="outline" className="text-xs">
@@ -103,16 +117,24 @@ export default function ProjectsSection() {
                   </div>
                 </div>
               </div>
-            </Card>
+            </motion.div>
           )}
 
           {/* Other Projects Grid */}
           <div className="grid md:grid-cols-2 gap-6">
-            {otherProjects.map((project) => (
-              <div key={project.id} className="transition-transform hover:-translate-y-1">
-                <Card className="h-full flex flex-col hover:border-foreground/20 transition-colors overflow-hidden">
+            {otherProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                variants={fadeInUp}
+                transition={{ delay: 0.2 + index * 0.1 }}
+                className="group relative"
+              >
+                <div className="relative h-full rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
                   {/* Project Image */}
-                  <div className="relative w-full pt-[56.25%] bg-black">
+                  <div className="relative w-full pt-[56.25%] overflow-hidden">
+                    {/* Gradient overlay soft */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
+
                     {!loadedImages[project.id] && <ImageSkeleton />}
                     <Image
                       src={project.image}
@@ -124,29 +146,27 @@ export default function ProjectsSection() {
                     />
                   </div>
 
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
+                  {/* Content */}
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
                       <Badge variant="outline" className="text-xs">
                         {project.status}
                       </Badge>
                     </div>
-                    <CardTitle className="text-xl md:text-2xl">{project.title}</CardTitle>
-                  </CardHeader>
+                    <h3 className="text-xl md:text-2xl font-bold mb-3">{project.title}</h3>
 
-                  <CardContent className="flex-1 pt-0">
-                    <CardDescription className="mb-4 text-sm leading-relaxed">
+                    <p className="mb-4 text-sm text-muted-foreground leading-relaxed flex-1">
                       {project.description}
-                    </CardDescription>
-                    <div className="flex flex-wrap gap-2">
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag) => (
                         <Badge key={tag} variant="outline" className="text-xs">
                           {tag}
                         </Badge>
                       ))}
                     </div>
-                  </CardContent>
 
-                  <CardFooter className="pt-4">
                     <ButtonLink
                       size="sm"
                       className="w-full gap-2 rounded-full justify-center"
@@ -155,12 +175,12 @@ export default function ProjectsSection() {
                       Vedi Progetto
                       <ArrowRight className="w-4 h-4" />
                     </ButtonLink>
-                  </CardFooter>
-                </Card>
-              </div>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

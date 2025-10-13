@@ -5,11 +5,20 @@ import Image from "next/image";
 import { useState } from "react";
 import { Calendar } from "lucide-react";
 import { services } from "@/lib/data";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import ImageSkeleton from "@/components/ui/ImageSkeleton";
 import Container from "../layout/Container";
+
+// Varianti di animazione leggere
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
 
 export default function ServicesSection() {
   const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
@@ -17,25 +26,25 @@ export default function ServicesSection() {
   const handleImageLoad = (serviceId: string) => {
     setLoadedImages((prev) => ({ ...prev, [serviceId]: true }));
   };
+
   return (
     <section id="services" className="py-20 md:py-32 bg-muted/30">
       <Container>
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           className="space-y-12"
         >
           {/* Section Title */}
-          <div className="text-center max-w-3xl mx-auto">
+          <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Come Posso Aiutarti
             </h2>
-              <p className="text-lg text-muted-foreground">
-                Trasforma il tuo business con soluzioni AI che fanno risparmiare tempo, riducono i costi e sbloccano nuove possibilità.
+            <p className="text-lg text-muted-foreground">
+              Trasforma il tuo business con soluzioni AI che fanno risparmiare tempo, riducono i costi e sbloccano nuove possibilità.
             </p>
-          </div>
+          </motion.div>
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -43,53 +52,55 @@ export default function ServicesSection() {
               return (
                 <motion.div
                   key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  variants={fadeInUp}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative"
                 >
-                  <Card className="h-full hover:border-foreground/20 transition-colors overflow-hidden">
-                    {/* Service Image */}
-                    <div className="relative h-64 bg-black">
+                  {/* Card Container */}
+                  <div className="relative h-full rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg hover:shadow-xl transition-all duration-300">
+                    {/* Service Image with Gradient Overlay */}
+                    <div className="relative h-48 overflow-hidden">
+                      {/* Gradient overlay soft */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
+
                       {!loadedImages[service.id] && <ImageSkeleton />}
                       <Image
                         src={service.image}
                         alt={`${service.title} - Mockup showcasing ${service.examples[0]}`}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
                         sizes="(max-width: 768px) 100vw, 33vw"
                         onLoad={() => handleImageLoad(service.id)}
                       />
                     </div>
 
-                    <CardHeader>
-                      <CardTitle className="text-2xl">
+                    {/* Content */}
+                    <div className="p-6 space-y-4">
+                      {/* Title */}
+                      <h3 className="text-2xl font-bold">
                         {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <CardDescription className="text-base leading-relaxed">
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-base text-muted-foreground leading-relaxed">
                         {service.description}
-                      </CardDescription>
+                      </p>
 
-                      <div>
-                        <p className="text-sm font-medium mb-2">Esempi:</p>
-                        <ul className="text-sm text-muted-foreground space-y-1">
-                          {service.examples.map((example, i) => (
-                            <li key={i}>• {example}</li>
-                          ))}
-                        </ul>
-                      </div>
-
+                      {/* Tags */}
                       <div className="flex flex-wrap gap-2 pt-2">
-                        {service.tags.map((tag) => (
+                        {service.tags.slice(0, 3).map((tag) => (
                           <Badge key={tag} variant="outline" className="text-xs">
                             {tag}
                           </Badge>
                         ))}
+                        {service.tags.length > 3 && (
+                          <Badge variant="outline" className="text-xs">
+                            +{service.tags.length - 3}
+                          </Badge>
+                        )}
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </motion.div>
               );
             })}

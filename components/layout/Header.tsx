@@ -61,7 +61,7 @@ export default function Header() {
           {/* Logo/Email - Left */}
           <Link
             href="/"
-            className="absolute left-0 text-sm md:text-base font-medium hover:opacity-70 transition-opacity"
+            className="absolute left-0 text-sm md:text-base font-semibold hover:opacity-70 transition-opacity"
           >
             {personalInfo.email}
           </Link>
@@ -74,12 +74,11 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="group flex items-center gap-2 text-sm font-medium"
+                  className="group flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-full hover:bg-muted/50 transition-all duration-300"
                 >
                   <Icon className="h-4 w-4 opacity-60" />
                   <span className="relative">
                     {link.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-foreground transition-all duration-300 group-hover:w-full" />
                   </span>
                 </Link>
               );
@@ -94,7 +93,7 @@ export default function Header() {
                   <ButtonLink
                     variant="ghost"
                     size="icon"
-                    className="hover:opacity-70"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
                     href={socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -113,7 +112,7 @@ export default function Header() {
                   <ButtonLink
                     variant="ghost"
                     size="icon"
-                    className="hover:opacity-70"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
                     href={socialLinks.x}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -138,6 +137,7 @@ export default function Header() {
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
+              className="min-h-[44px] min-w-[44px]"
             >
               {isMobileMenuOpen ? (
                 <CloseIcon className="h-6 w-6" />
@@ -159,7 +159,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center gap-2 text-sm font-medium hover:opacity-70 transition-opacity py-2"
+                    className="flex items-center gap-2 text-sm font-medium px-3 py-3 rounded-2xl hover:bg-muted/50 transition-all duration-300 min-h-[44px]"
                   >
                     <Icon className="h-4 w-4 opacity-60" />
                     {link.name}
@@ -172,7 +172,7 @@ export default function Header() {
                 <ButtonLink
                   variant="ghost"
                   size="icon"
-                  className="hover:opacity-70"
+                  className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
                   href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -183,7 +183,7 @@ export default function Header() {
                 <ButtonLink
                   variant="ghost"
                   size="icon"
-                  className="hover:opacity-70"
+                  className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
                   href={socialLinks.x}
                   target="_blank"
                   rel="noopener noreferrer"
