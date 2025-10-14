@@ -27,14 +27,14 @@ const ContactSection = dynamic(() => import("@/components/sections/ContactSectio
 
 export const metadata: Metadata = {
   title: "Euxhenjo Nexhipi | Soluzioni AI, Automazioni e Siti Intelligenti",
-  description: "Aiuto aziende e creator a integrare agenti AI, chatbot e workflow automatizzati per risparmiare tempo e ottenere risultati misurabili.",
+  description: "Aiuto aziende e clienti a integrare agenti AI, chatbot e workflow automatizzati per risparmiare tempo e ottenere risultati misurabili.",
   openGraph: {
     title: "Euxhenjo Nexhipi | Soluzioni AI, Automazioni e Siti Intelligenti",
-    description: "Aiuto aziende e creator a integrare agenti AI, chatbot e workflow automatizzati per risparmiare tempo e ottenere risultati misurabili.",
+    description: "Aiuto aziende e clienti a integrare agenti AI, chatbot e workflow automatizzati per risparmiare tempo e ottenere risultati misurabili.",
   },
   twitter: {
     title: "Euxhenjo Nexhipi | Soluzioni AI, Automazioni e Siti Intelligenti",
-    description: "Aiuto aziende e creator a integrare agenti AI, chatbot e workflow automatizzati per risparmiare tempo e ottenere risultati misurabili.",
+    description: "Aiuto aziende e clienti a integrare agenti AI, chatbot e workflow automatizzati per risparmiare tempo e ottenere risultati misurabili.",
   },
 };
 

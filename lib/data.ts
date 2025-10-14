@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Euxhenjo Nex",
   firstName: "Euxhenjo",
-  title: "Aiuto aziende e creator a integrare agenti, automazioni ed esperienze web no-code basate su AI, per risparmiare tempo e ottenere risultati misurabili.",
+  title: "Aiuto aziende e clienti a integrare agenti, automazioni ed esperienze web no-code basate su AI, per risparmiare tempo e ottenere risultati misurabili.",
   bio: "Unisco tecnologia AI e sviluppo web per aiutare persone e aziende a lavorare in modo più intelligente. Dalla creazione di GPT e automazioni con n8n alla realizzazione di web app responsive con Claude Code o Lovable, mi concentro sulla creazione di sistemi basati su AI che semplificano il lavoro, potenziano la creatività e generano risultati concreti.",
   headline: "Costruisco soluzioni AI, automazioni e siti intelligenti che lavorano al posto tuo.",
   email: "hi@euxhenjonex.com",

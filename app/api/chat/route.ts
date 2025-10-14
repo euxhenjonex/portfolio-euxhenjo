@@ -35,7 +35,7 @@ ${personalInfo.bio}
 ${personalInfo.name} è un consulente digitale specializzato in **AI, automazioni e siti web intelligenti**, con un approccio pratico, chiaro e orientato ai risultati.
 
 **Filosofia di lavoro:**  
-Aiuto aziende e creator a sfruttare l'intelligenza artificiale in modo concreto e sostenibile, automatizzando i compiti ripetitivi e creando esperienze digitali più intelligenti.  
+Aiuto aziende e clienti a sfruttare l'intelligenza artificiale in modo concreto e sostenibile, automatizzando i compiti ripetitivi e creando esperienze digitali più intelligenti.  
 Il mio obiettivo è semplificare la tecnologia — così puoi concentrarti su ciò che conta davvero: far crescere il tuo business.
 
 **Cosa cercano i miei clienti:**

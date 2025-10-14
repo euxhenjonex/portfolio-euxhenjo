@@ -59,7 +59,7 @@ export default function AboutSection() {
               <div className="space-y-6">
                 <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
                   <p>
-                    Sono <span className="text-foreground font-semibold">uno specialista in integrazione AI</span>: trasformo l&apos;intelligenza artificiale in strumenti reali che semplificano il lavoro e generano valore misurabile.
+                    Sono un <span className="text-foreground font-semibold">AI Solution Specialist</span>: trasformo l&apos;intelligenza artificiale in strumenti reali che semplificano il lavoro e generano valore misurabile.
                   </p>
 
                   <p>
