@@ -21,7 +21,7 @@ interface ProjectHeroProps {
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
   return (
-    <section className="py-20 md:py-32">
+    <section className="section-padding">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,18 +46,18 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                 {project.status}
               </Badge>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold">
+            <h1 className="heading-xl">
               {project.title}
             </h1>
             {project.tagline && (
-              <p className="text-xl md:text-2xl text-muted-foreground">
+              <p className="body-lg">
                 {project.tagline}
               </p>
             )}
           </div>
 
           {/* Hero Image */}
-          <div className="relative w-full aspect-video bg-muted rounded-lg overflow-hidden border">
+          <div className="relative w-full aspect-video bg-card rounded-2xl overflow-hidden ring-1 ring-border/50 shadow-lg">
             <Image
               src={project.image}
               alt={`${project.title} - Project mockup`}

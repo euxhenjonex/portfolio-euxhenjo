@@ -20,7 +20,7 @@ export default function AboutSection() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-muted/30">
+    <section id="about" className="section-padding bg-muted/30">
       <Container>
         <motion.div
           initial="hidden"
@@ -29,7 +29,7 @@ export default function AboutSection() {
         >
           {/* Section Title */}
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Chi Sono</h2>
+            <h2 className="heading-lg mb-4">Chi Sono</h2>
           </motion.div>
 
           {/* Content: 2 Columns Layout */}
@@ -57,7 +57,7 @@ export default function AboutSection() {
             {/* Right: Bio Text */}
             <motion.div variants={fadeInUp} className="space-y-6">
               <div className="space-y-6">
-                <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+                <div className="space-y-6 body-base">
                   <p>
                     Sono un <span className="text-foreground font-semibold">AI Solution Specialist</span>: trasformo l&apos;intelligenza artificiale in strumenti reali che semplificano il lavoro e generano valore misurabile.
                   </p>

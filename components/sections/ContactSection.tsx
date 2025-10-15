@@ -21,7 +21,7 @@ export default function ContactSection() {
     }
   };
   return (
-    <section id="contact" className="py-20 md:py-32 bg-muted/30">
+    <section id="contact" className="section-padding bg-muted/30">
       <Container>
         <motion.div
           initial={{ opacity: 0 }}
@@ -32,8 +32,8 @@ export default function ContactSection() {
         >
           {/* Title */}
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">Pronto a Iniziare il Tuo Progetto?</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <h2 className="heading-lg">Pronto a Iniziare il Tuo Progetto?</h2>
+            <p className="body-lg">
               Prenota una consulenza gratuita di 30 minuti per discutere delle tue esigenze. Nessun impegno richiesto. Esploriamo insieme come l&apos;AI può trasformare il tuo business.
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function ContactSection() {
               href="https://cal.com/euxhenjonex/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full px-8 py-6 text-sm font-medium uppercase tracking-wider gap-2"
+              className="rounded-full px-8 py-6 text-sm font-semibold uppercase tracking-wider gap-2"
             >
               <Calendar className="w-5 h-5" />
               Prenota una call gratuita

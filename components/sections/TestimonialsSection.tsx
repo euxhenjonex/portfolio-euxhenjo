@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-20 md:py-32 bg-muted/30">
+    <section id="testimonials" className="section-padding bg-muted/30">
       <Container>
         <motion.div
           initial="hidden"
@@ -60,10 +60,10 @@ export default function TestimonialsSection() {
         >
           {/* Section Title */}
           <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="heading-lg mb-4">
               Cosa Dicono i Clienti
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="body-lg">
               La fiducia di aziende e creator per risultati concreti
             </p>
           </motion.div>
@@ -76,7 +76,7 @@ export default function TestimonialsSection() {
                 variants={fadeInUp}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="h-full rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                <div className="card-elevated h-full p-6">
                   <div className="space-y-4">
                     {/* Quote Icon */}
                     <Quote className="w-8 h-8 text-muted-foreground/40" />
@@ -123,7 +123,7 @@ export default function TestimonialsSection() {
               >
                 {testimonials.map((testimonial) => (
                   <div key={testimonial.id} className="w-full flex-shrink-0 px-2">
-                    <div className="h-full rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg p-6">
+                    <div className="card-elevated h-full p-6">
                       <div className="space-y-4">
                         {/* Quote Icon */}
                         <Quote className="w-8 h-8 text-muted-foreground/40" />

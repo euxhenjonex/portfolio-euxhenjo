@@ -15,7 +15,7 @@ export default function ProjectResults({ project }: ProjectResultsProps) {
   if (!project.results || project.results.length === 0) return null;
 
   return (
-    <section className="py-12 md:py-20">
+    <section className="section-padding-sm">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export default function ProjectResults({ project }: ProjectResultsProps) {
         >
           <div className="flex items-center justify-center gap-3 mb-12">
             <TrendingUp className="w-8 h-8 text-green-500" />
-            <h2 className="text-3xl md:text-4xl font-bold">Risultati e Impatto</h2>
+            <h2 className="heading-md">Risultati e Impatto</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">

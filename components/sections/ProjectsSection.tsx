@@ -30,7 +30,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-32">
+    <section id="projects" className="section-padding">
       <Container>
         <motion.div
           initial="hidden"
@@ -40,10 +40,10 @@ export default function ProjectsSection() {
         >
           {/* Section Title */}
           <motion.div variants={fadeInUp} className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="heading-lg mb-4">
               Progetti in Evidenza
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="body-lg max-w-2xl mx-auto">
               Una selezione di progetti che mostrano le mie competenze
             </p>
           </motion.div>
@@ -52,11 +52,11 @@ export default function ProjectsSection() {
           {featuredProject && (
             <motion.div
               variants={fadeInUp}
-              className="relative rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="card-elevated relative"
             >
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Project Image */}
-                <div className="relative w-full pt-[56.25%] overflow-hidden">
+                <div className="relative w-full pt-[56.25%] overflow-hidden rounded-t-2xl md:rounded-t-none md:rounded-l-2xl">
                   {/* Gradient overlay soft */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
 
@@ -73,16 +73,16 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6 md:p-8 flex flex-col justify-between">
+                <div className="p-6 md:p-8 flex flex-col justify-between rounded-b-2xl md:rounded-bl-none md:rounded-r-2xl">
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 flex-wrap">
                       <Badge variant="outline">{featuredProject.status}</Badge>
                       <Badge variant="secondary">In Evidenza</Badge>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold">
+                    <h3 className="heading-sm">
                       {featuredProject.title}
                     </h3>
-                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    <p className="body-base">
                       {featuredProject.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -129,9 +129,9 @@ export default function ProjectsSection() {
                 transition={{ delay: 0.2 + index * 0.1 }}
                 className="group relative"
               >
-                <div className="relative h-full rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                <div className="card-elevated relative h-full flex flex-col">
                   {/* Project Image */}
-                  <div className="relative w-full pt-[56.25%] overflow-hidden">
+                  <div className="relative w-full pt-[56.25%] overflow-hidden rounded-t-2xl">
                     {/* Gradient overlay soft */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
 

@@ -16,7 +16,7 @@ export default function ProjectChallenge({ project }: ProjectChallengeProps) {
   if (!project.challenge && !project.solution) return null;
 
   return (
-    <section className="py-12 md:py-20">
+    <section className="section-padding-sm">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,24 +25,24 @@ export default function ProjectChallenge({ project }: ProjectChallengeProps) {
           transition={{ duration: 0.6 }}
           className="space-y-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="heading-md text-center mb-12">
             Sfida e Soluzione
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Challenge */}
             {project.challenge && (
-              <Card className="border-2">
+              <Card>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 bg-red-500/10 rounded-full">
                       <Target className="w-6 h-6 text-red-500" />
                     </div>
-                    <CardTitle className="text-2xl">La Sfida</CardTitle>
+                    <CardTitle className="heading-sm">La Sfida</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="body-base">
                     {project.challenge}
                   </p>
                 </CardContent>
@@ -51,17 +51,17 @@ export default function ProjectChallenge({ project }: ProjectChallengeProps) {
 
             {/* Solution */}
             {project.solution && (
-              <Card className="border-2">
+              <Card>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 bg-green-500/10 rounded-full">
                       <Lightbulb className="w-6 h-6 text-green-500" />
                     </div>
-                    <CardTitle className="text-2xl">La Soluzione</CardTitle>
+                    <CardTitle className="heading-sm">La Soluzione</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <p className="body-base">
                     {project.solution}
                   </p>
                 </CardContent>

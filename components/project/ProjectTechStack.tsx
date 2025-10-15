@@ -15,7 +15,7 @@ export default function ProjectTechStack({ project }: ProjectTechStackProps) {
   if (!project.techStack || project.techStack.length === 0) return null;
 
   return (
-    <section className="py-12 md:py-20 bg-muted/30">
+    <section className="section-padding-sm bg-muted/30">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export default function ProjectTechStack({ project }: ProjectTechStackProps) {
         >
           <div className="flex items-center justify-center gap-3 mb-8">
             <Code2 className="w-8 h-8" />
-            <h2 className="text-3xl md:text-4xl font-bold">Tech Stack</h2>
+            <h2 className="heading-md">Tech Stack</h2>
           </div>
 
           <div className="flex flex-wrap justify-center gap-3">

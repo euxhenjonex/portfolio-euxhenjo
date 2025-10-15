@@ -15,7 +15,7 @@ export default function ProjectCTA({ project }: ProjectCTAProps) {
   const ctaText = project.cta || "Vuoi lavorare insieme su un progetto come questo?";
 
   return (
-    <section className="py-20 md:py-32 bg-muted/30">
+    <section className="section-padding bg-muted/30">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,11 +24,11 @@ export default function ProjectCTA({ project }: ProjectCTAProps) {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center space-y-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="heading-md">
             {ctaText}
           </h2>
 
-          <p className="text-lg text-muted-foreground">
+          <p className="body-lg">
             Prenota una consulenza gratuita di 30 minuti per discutere delle esigenze del tuo progetto
           </p>
 

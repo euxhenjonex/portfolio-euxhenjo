@@ -189,9 +189,9 @@ export default function ChatWidget() {
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed inset-x-4 bottom-20 md:bottom-24 md:right-6 md:left-auto z-50 w-auto md:w-[400px] h-[calc(100vh-8rem)] md:h-[min(600px,calc(100vh-8rem))]"
           >
-            <div className="bg-background ring-1 ring-border/50 rounded-2xl shadow-2xl overflow-hidden h-full flex flex-col">
+            <div className="bg-card ring-1 ring-border/50 rounded-2xl shadow-2xl overflow-hidden h-full flex flex-col">
               {/* Header */}
-              <div className="bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground p-4 flex items-center gap-3">
+              <div className="bg-gradient-to-r from-primary via-primary to-primary/90 text-primary-foreground p-4 flex items-center gap-3 rounded-t-2xl">
                 <div className="h-10 w-10 rounded-2xl bg-primary-foreground/20 flex items-center justify-center">
                   <Sparkles className="h-5 w-5" />
                 </div>
@@ -232,7 +232,7 @@ export default function ChatWidget() {
                             handleSubmit(e, q);
                           }}
                           aria-label={`Domanda suggerita: ${q}`}
-                          className="w-full text-left text-xs p-3 rounded-2xl ring-1 ring-border/50 hover:shadow-lg hover:ring-border transition-all duration-300 min-h-[44px]"
+                          className="w-full text-left text-xs p-3 rounded-2xl bg-card ring-1 ring-border/50 hover:shadow-lg hover:ring-border/80 transition-all duration-300 min-h-[44px]"
                         >
                           {q}
                         </button>
@@ -325,7 +325,7 @@ export default function ChatWidget() {
               </div>
 
               {/* Input */}
-              <form onSubmit={handleSubmit} className="p-3 md:p-4 border-t bg-background flex-shrink-0">
+              <form onSubmit={handleSubmit} className="p-3 md:p-4 border-t border-border/50 bg-card flex-shrink-0 rounded-b-2xl">
                 <div className="flex gap-2">
                   <Input
                     ref={inputRef}

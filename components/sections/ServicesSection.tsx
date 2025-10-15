@@ -28,7 +28,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="py-20 md:py-32 bg-muted/30">
+    <section id="services" className="section-padding bg-muted/30">
       <Container>
         <motion.div
           initial="hidden"
@@ -38,10 +38,10 @@ export default function ServicesSection() {
         >
           {/* Section Title */}
           <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="heading-lg mb-4">
               Come Posso Aiutarti
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="body-lg">
               Trasforma il tuo business con soluzioni AI che fanno risparmiare tempo, riducono i costi e sbloccano nuove possibilità.
             </p>
           </motion.div>
@@ -57,9 +57,9 @@ export default function ServicesSection() {
                   className="group relative"
                 >
                   {/* Card Container */}
-                  <div className="relative h-full rounded-2xl overflow-hidden ring-1 ring-border/50 bg-card shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="card-elevated relative h-full overflow-hidden">
                     {/* Service Image */}
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-64 md:h-56 overflow-hidden">
                       {!loadedImages[service.id] && <ImageSkeleton />}
                       <Image
                         src={service.image}
@@ -74,12 +74,12 @@ export default function ServicesSection() {
                     {/* Content */}
                     <div className="p-6 space-y-4">
                       {/* Title */}
-                      <h3 className="text-2xl font-bold">
+                      <h3 className="heading-sm">
                         {service.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-base text-muted-foreground leading-relaxed">
+                      <p className="body-base">
                         {service.description}
                       </p>
 
@@ -111,7 +111,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-center pt-8"
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="body-lg mb-6">
               Pronto a integrare l&apos;AI nel tuo workflow?
             </p>
             <ButtonLink
@@ -119,12 +119,12 @@ export default function ServicesSection() {
               href="https://cal.com/euxhenjonex/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full px-8 py-6 text-sm font-medium uppercase tracking-wider gap-2"
+              className="rounded-full px-8 py-6 text-sm font-semibold uppercase tracking-wider gap-2"
             >
               <Calendar className="w-4 h-4" />
               Prenota una call gratuita
             </ButtonLink>
-            <p className="text-sm text-muted-foreground/70 mt-4">
+            <p className="text-sm text-muted-foreground mt-4">
               Nessun impegno, solo idee pratiche per il tuo business.
             </p>
           </motion.div>

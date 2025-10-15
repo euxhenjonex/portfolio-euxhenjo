@@ -329,78 +329,94 @@ export const projects = [
 
 export const services = [
   {
-    id: "ai-agents-automations",
+    id: "ai-audit",
+    title: "AI Audit & Action Plan",
+    description:
+      "Analizzo i tuoi processi e strumenti per identificare dove l'AI può creare valore, ridurre i costi e migliorare la produttività.",
+    examples: [
+      "Analisi processi aziendali",
+      "Identificazione opportunità AI",
+      "Piano d'azione implementabile"
+    ],
+    tags: ["Audit", "Workflow", "OpenAI"],
+    icon: "search",
+    image: "/images/services/ai-audit.webp",
+  },
+  {
+    id: "ai-automation",
     title: "Agenti AI e Automazioni",
     description:
-      "Costruisco agenti AI intelligenti e workflow automatizzati che collegano strumenti, app e dati aziendali per far lavorare i processi al posto tuo.",
+      "Costruisco flussi intelligenti e agenti AI che automatizzano operazioni, CRM e messaggistica, integrando n8n, GPT e API.",
     examples: [
-      "Workflow automatizzati (CRM, Notion, Google Sheets)",
-      "Agenti con database vettoriali (Drive, Pinecone)",
-      "Automazioni multi-step con logica AI"
+      "Workflow automatizzati con n8n",
+      "Chatbot Telegram/WhatsApp",
+      "Integrazioni CRM e database"
     ],
-    tags: ["n8n", "OpenAI", "Pinecone"],
+    tags: ["n8n", "OpenAI", "API"],
     icon: "workflow",
-    image: "/images/services/ai-solutions.webp",
+    image: "/images/services/ai-automation.webp",
   },
   {
-    id: "chatbots",
-    title: "Chatbot e Assistenza Conversazionale",
+    id: "ai-website",
+    title: "Siti Web AI-Powered",
     description:
-      "Sviluppo chatbot intelligenti per Telegram e WhatsApp che gestiscono richieste, appuntamenti e supporto clienti, integrati con AI e automazioni.",
+      "Realizzo siti web moderni, veloci e integrati con chatbot e automazioni AI, ottimizzati per SEO e prestazioni.",
     examples: [
-      "Bot Telegram/WhatsApp con AI",
-      "Automazioni lead nurturing e reminder",
-      "Supporto clienti 24/7"
-    ],
-    tags: ["Telegram API", "WhatsApp Cloud API", "Twilio", "n8n", "OpenAI"],
-    icon: "message-circle",
-    image: "/images/services/automation-chatbots.webp",
-  },
-  {
-    id: "no-code-web",
-    title: "Sviluppo Web No-Code e AI-Powered",
-    description:
-      "Lancia siti e web app professionali in pochi giorni, non mesi. Creo esperienze digitali con Claude Code, Lovable, Replit, WordPress o Shopify, integrando l'AI nei flussi chiave per velocità e personalizzazione.",
-    examples: [
-      "Landing page ottimizzate",
+      "Landing page con chatbot AI",
       "Portfolio e siti aziendali",
-      "E-commerce su Shopify"
+      "E-commerce integrato con AI"
     ],
-    tags: ["Claude Code", "Lovable", "WordPress", "Shopify"],
+    tags: ["Next.js", "Vercel", "Claude Code"],
     icon: "globe",
-    image: "/images/services/no-code-web.webp",
+    image: "/images/services/ai-transformation.webp",
   },
 ];
 
-export const testimonials = [
-  {
-    id: "testimonial-1",
-    quote:
-      "Eugenio ha costruito un GPT personalizzato che ha trasformato il modo in cui il nostro team gestisce le richieste dei clienti. Il tempo di risposta è diminuito del 60% e la qualità è effettivamente migliorata. Altamente raccomandato!",
-    name: "Marco Rossi",
-    role: "CEO",
-    company: "TechStartup Italia",
-    avatar: "MR",
-  },
-  {
-    id: "testimonial-2",
-    quote:
-      "L'automazione n8n che Eugenio ha creato ci ha fatto risparmiare 15 ore a settimana. Funziona perfettamente in background. Il miglior investimento che abbiamo fatto quest'anno.",
-    name: "Sarah Johnson",
-    role: "Operations Manager",
-    company: "GrowthCo",
-    avatar: "SJ",
-  },
-  {
-    id: "testimonial-3",
-    quote:
-      "Abbiamo ottenuto un sito web straordinario in meno di una settimana. L'approccio no-code ha permesso iterazioni veloci e il risultato finale ha superato le aspettative.",
-    name: "Luca Bianchi",
-    role: "Founder",
-    company: "ConsultPro",
-    avatar: "LB",
-  },
-];
+// ============================================
+// TESTIMONIALS - Temporaneamente Disattivate
+// ============================================
+// Queste testimonials verranno riattivate quando arriveranno recensioni reali dai primi clienti.
+// Per riattivare: sostituire l'array vuoto con i dati commentati sotto e abilitare TestimonialsSection in app/page.tsx
+
+export const testimonials: Array<{
+  id: string;
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  avatar: string;
+}> = [];
+
+// Dati testimonials fittizie (da sostituire con recensioni reali):
+// [
+//   {
+//     id: "testimonial-1",
+//     quote:
+//       "Eugenio ha costruito un GPT personalizzato che ha trasformato il modo in cui il nostro team gestisce le richieste dei clienti. Il tempo di risposta è diminuito del 60% e la qualità è effettivamente migliorata. Altamente raccomandato!",
+//     name: "Marco Rossi",
+//     role: "CEO",
+//     company: "TechStartup Italia",
+//     avatar: "MR",
+//   },
+//   {
+//     id: "testimonial-2",
+//     quote:
+//       "L'automazione n8n che Eugenio ha creato ci ha fatto risparmiare 15 ore a settimana. Funziona perfettamente in background. Il miglior investimento che abbiamo fatto quest'anno.",
+//     name: "Sarah Johnson",
+//     role: "Operations Manager",
+//     company: "GrowthCo",
+//     avatar: "SJ",
+//   },
+//   {
+//     id: "testimonial-3",
+//     quote:
+//       "Abbiamo ottenuto un sito web straordinario in meno di una settimana. L'approccio no-code ha permesso iterazioni veloci e il risultato finale ha superato le aspettative.",
+//     name: "Luca Bianchi",
+//     role: "Founder",
+//     company: "ConsultPro",
+//     avatar: "LB",
+//   },
+// ]
 
 export const keywords = [
   "Integrazione AI",
