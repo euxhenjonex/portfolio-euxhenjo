@@ -76,9 +76,9 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Greeting */}
-          <motion.h2 variants={itemVariants} className="text-lg md:text-xl font-medium mb-4 mt-3">
+          <motion.p variants={itemVariants} className="text-lg md:text-xl font-medium mb-4 mt-3">
             Ciao, sono {personalInfo.firstName} 👋
-          </motion.h2>
+          </motion.p>
 
           {/* Main Headline */}
           <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] tracking-tight mb-6 px-4">

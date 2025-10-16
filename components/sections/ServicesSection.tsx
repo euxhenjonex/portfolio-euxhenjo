@@ -59,7 +59,7 @@ export default function ServicesSection() {
                   {/* Card Container */}
                   <div className="card-elevated relative h-full overflow-hidden">
                     {/* Service Image */}
-                    <div className="relative h-64 md:h-56 overflow-hidden">
+                    <div className="relative aspect-[4/3] overflow-hidden">
                       {!loadedImages[service.id] && <ImageSkeleton />}
                       <Image
                         src={service.image}

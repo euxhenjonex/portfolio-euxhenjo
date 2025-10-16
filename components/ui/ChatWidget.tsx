@@ -232,7 +232,7 @@ export default function ChatWidget() {
                             handleSubmit(e, q);
                           }}
                           aria-label={`Domanda suggerita: ${q}`}
-                          className="w-full text-left text-xs p-3 rounded-2xl bg-card ring-1 ring-border/50 hover:shadow-lg hover:ring-border/80 transition-all duration-300 min-h-[44px]"
+                          className="w-full text-left text-xs p-3 rounded-2xl bg-card ring-1 ring-border/50 hover:shadow-lg hover:ring-border/80 focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 transition-all duration-300 min-h-[44px]"
                         >
                           {q}
                         </button>
