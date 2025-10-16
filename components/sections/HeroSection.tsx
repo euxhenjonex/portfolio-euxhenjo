@@ -93,16 +93,16 @@ export default function HeroSection() {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto px-4 sm:px-0">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 sm:px-0">
             {/* Primary CTA */}
             <ButtonLink
               size="lg"
               href="https://cal.com/euxhenjonex/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto group rounded-full px-8 py-4 text-sm font-medium uppercase tracking-wider transition-all hover:shadow-lg gap-2 justify-center"
+              className="w-full max-w-[280px] sm:w-auto group rounded-full px-8 py-4 text-sm font-medium uppercase tracking-wider transition-all hover:shadow-lg gap-2 justify-center"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4" aria-hidden="true" />
               <span>Prenota una call gratuita</span>
             </ButtonLink>
 
@@ -111,10 +111,10 @@ export default function HeroSection() {
               size="lg"
               variant="outline"
               href="/#projects"
-              className="w-full sm:w-auto group rounded-full px-8 py-4 text-sm font-medium uppercase tracking-wider transition-all hover:bg-primary/5 gap-2 justify-center"
+              className="w-full max-w-[280px] sm:w-auto group rounded-full px-8 py-4 text-sm font-medium uppercase tracking-wider transition-all hover:bg-primary/5 gap-2 justify-center"
             >
               Guarda i progetti
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </ButtonLink>
           </motion.div>
         </motion.div>

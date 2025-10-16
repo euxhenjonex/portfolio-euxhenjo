@@ -33,7 +33,7 @@ export default function ContactSection() {
           {/* Title */}
           <div className="space-y-4">
             <h2 className="heading-lg">Pronto a Iniziare il Tuo Progetto?</h2>
-            <p className="body-lg">
+            <p className="body-base">
               Prenota una consulenza gratuita di 30 minuti per discutere delle tue esigenze. Nessun impegno richiesto. Esploriamo insieme come l&apos;AI può trasformare il tuo business.
             </p>
           </div>

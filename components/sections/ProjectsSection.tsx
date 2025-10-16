@@ -56,7 +56,7 @@ export default function ProjectsSection() {
             >
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Project Image */}
-                <div className="relative w-full pt-[56.25%] overflow-hidden rounded-t-2xl md:rounded-t-none md:rounded-l-2xl">
+<div className="relative w-full pt-[56.25%] overflow-hidden md:rounded-l-2xl">
                   {/* Gradient overlay soft */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
 
@@ -73,7 +73,7 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6 md:p-8 flex flex-col justify-between rounded-b-2xl md:rounded-bl-none md:rounded-r-2xl">
+                <div className="p-6 md:p-8 flex flex-col justify-between md:rounded-r-2xl">
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 flex-wrap">
                       <Badge variant="outline">{featuredProject.status}</Badge>
@@ -121,7 +121,7 @@ export default function ProjectsSection() {
           )}
 
           {/* Other Projects Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {otherProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -131,7 +131,7 @@ export default function ProjectsSection() {
               >
                 <div className="card-elevated relative h-full flex flex-col">
                   {/* Project Image */}
-                  <div className="relative w-full pt-[56.25%] overflow-hidden rounded-t-2xl">
+                  <div className="relative w-full pt-[56.25%] overflow-hidden">
                     {/* Gradient overlay soft */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
 

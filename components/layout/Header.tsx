@@ -82,7 +82,8 @@ export default function Header() {
           {/* Logo/Email - Left */}
           <Link
             href="/"
-            className="absolute left-0 text-sm md:text-base font-semibold hover:opacity-70 transition-opacity"
+            className="absolute left-0 text-xs sm:text-sm md:text-base font-semibold hover:opacity-70 transition-opacity truncate max-w-[140px] sm:max-w-none"
+            title={personalInfo.email}
           >
             {personalInfo.email}
           </Link>
