@@ -56,7 +56,7 @@ export default function ProjectsSection() {
             >
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Project Image */}
-<div className="relative w-full pt-[56.25%] overflow-hidden rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none">
+                <div className="relative w-full pt-[56.25%] overflow-hidden rounded-t-2xl md:rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none md:rounded-br-none">
                   {/* Gradient overlay soft */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background/5 to-primary/5 z-10" />
 
@@ -73,7 +73,7 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6 md:p-8 flex flex-col justify-between md:rounded-r-2xl">
+                <div className="p-6 md:p-8 flex flex-col justify-between md:rounded-tr-2xl md:rounded-br-2xl">
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 flex-wrap">
                       <Badge variant="outline">{featuredProject.status}</Badge>
@@ -99,7 +99,7 @@ export default function ProjectsSection() {
                       href={`/projects/${featuredProject.id}`}
                       className="rounded-full gap-2 flex-1 justify-center"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="icon-sm" />
                       Vedi Progetto
                     </ButtonLink>
                     {featuredProject.link && featuredProject.link !== "#" && (
@@ -110,7 +110,7 @@ export default function ProjectsSection() {
                         variant="outline"
                         className="rounded-full gap-2 flex-1 justify-center"
                       >
-                        <ExternalLink className="w-4 h-4" />
+                        <ExternalLink className="icon-sm" />
                         Prova il GPT
                       </ButtonLink>
                     )}
@@ -173,7 +173,7 @@ export default function ProjectsSection() {
                       href={`/projects/${project.id}`}
                     >
                       Vedi Progetto
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="icon-sm" />
                     </ButtonLink>
                   </div>
                 </div>

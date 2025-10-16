@@ -121,7 +121,7 @@ export default function ServicesSection() {
               rel="noopener noreferrer"
               className="rounded-full px-8 py-6 text-sm font-semibold uppercase tracking-wider gap-2"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="icon-sm" />
               Prenota una call gratuita
             </ButtonLink>
             <p className="text-sm text-muted-foreground mt-4">

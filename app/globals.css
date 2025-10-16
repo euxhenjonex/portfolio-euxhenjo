@@ -24,6 +24,9 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
+    /* Accent Color System - Premium Cyan */
+    --accent-primary: 180 100% 65%;
+    --accent-primary-foreground: 0 0% 9%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -55,6 +58,9 @@
     --border: 0 0% 20%;
     --input: 0 0% 18%;
     --ring: 0 0% 83.1%;
+    /* Accent Color System - Premium Cyan for Dark Mode */
+    --accent-primary: 180 100% 70%;
+    --accent-primary-foreground: 0 0% 9%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -181,7 +187,7 @@ button:focus-visible {
   }
 
   .card-elevated:hover {
-    @apply shadow-xl ring-border/80;
+    @apply shadow-xl ring-accent-primary/30;
   }
 
   .card-flat {

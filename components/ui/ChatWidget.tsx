@@ -144,7 +144,7 @@ export default function ChatWidget() {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <X className="h-6 w-6" />
+                <X className="icon-lg" />
               </motion.div>
             ) : (
               <motion.div
@@ -164,7 +164,7 @@ export default function ChatWidget() {
                   }
                 }}
               >
-                <Sparkles className="h-6 w-6" />
+                <Sparkles className="icon-lg" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -208,7 +208,7 @@ export default function ChatWidget() {
                   aria-label="Chiudi chat"
                   className="h-10 w-10 min-h-[44px] min-w-[44px] rounded-full hover:bg-primary-foreground/20 text-primary-foreground"
                 >
-                  <X className="h-4 w-4" />
+                  <X className="icon-sm" />
                 </Button>
               </div>
 
@@ -315,7 +315,7 @@ export default function ChatWidget() {
                     {isLoading && !isTyping && (
                       <div className="flex gap-2 justify-start">
                         <div className="rounded-2xl px-3 py-2 text-sm bg-muted">
-                          <Loader2 className="h-4 w-4 animate-spin" />
+                          <Loader2 className="icon-sm animate-spin" />
                         </div>
                       </div>
                     )}
@@ -343,9 +343,9 @@ export default function ChatWidget() {
                     className="min-h-[44px] min-w-[44px] rounded-full"
                   >
                     {isLoading ? (
-                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <Loader2 className="icon-sm animate-spin" />
                     ) : (
-                      <Send className="h-4 w-4" />
+                      <Send className="icon-sm" />
                     )}
                   </Button>
                 </div>

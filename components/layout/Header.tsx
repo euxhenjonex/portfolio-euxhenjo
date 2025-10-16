@@ -99,7 +99,7 @@ export default function Header() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="group flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-full hover:bg-muted/50 transition-all duration-300"
                 >
-                  <Icon className="h-4 w-4 opacity-60" aria-hidden="true" />
+                  <Icon className="icon-sm opacity-60" aria-hidden="true" />
                   <span className="relative">
                     {link.name}
                   </span>
@@ -122,7 +122,7 @@ export default function Header() {
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="h-5 w-5" aria-hidden="true" />
+                    <Linkedin className="icon-base" aria-hidden="true" />
                   </ButtonLink>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -141,7 +141,7 @@ export default function Header() {
                     rel="noopener noreferrer"
                     aria-label="X (Twitter)"
                   >
-                    <XIcon className="h-5 w-5" aria-hidden="true" />
+                    <XIcon className="icon-base" aria-hidden="true" />
                   </ButtonLink>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -163,9 +163,9 @@ export default function Header() {
               className="min-h-[44px] min-w-[44px]"
             >
               {isMobileMenuOpen ? (
-                <CloseIcon className="h-6 w-6" aria-hidden="true" />
+                <CloseIcon className="icon-lg" aria-hidden="true" />
               ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
+                <Menu className="icon-lg" aria-hidden="true" />
               )}
             </Button>
           </div>
@@ -184,7 +184,7 @@ export default function Header() {
                     onClick={(e) => handleNavClick(e, link.href)}
                     className="flex items-center gap-2 text-sm font-medium px-3 py-3 rounded-2xl hover:bg-muted/50 transition-all duration-300 min-h-[44px]"
                   >
-                    <Icon className="h-4 w-4 opacity-60" aria-hidden="true" />
+                    <Icon className="icon-sm opacity-60" aria-hidden="true" />
                     {link.name}
                   </Link>
                 );
