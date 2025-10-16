@@ -78,11 +78,11 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/5 via-background to-primary/5 border border-primary/10"
+                  className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-accent-primary/5 via-background to-accent-primary/5 border border-accent-primary/10"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary opacity-100" />
+                      <div className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
                       <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
                         Attualmente sto studiando
                       </h3>
@@ -95,21 +95,21 @@ export default function AboutSection() {
                     <div className="grid grid-cols-2 gap-3 text-sm">
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-accent-primary mt-1">•</span>
                           <span className="text-muted-foreground">Concetti base e architetture LLM</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-accent-primary mt-1">•</span>
                           <span className="text-muted-foreground">Orchestrazione e prompt engineering</span>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-accent-primary mt-1">•</span>
                           <span className="text-muted-foreground">LangChain & LangGraph</span>
                         </div>
                         <div className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-accent-primary mt-1">•</span>
                           <span className="text-muted-foreground">LlamaIndex & RAG patterns</span>
                         </div>
                       </div>

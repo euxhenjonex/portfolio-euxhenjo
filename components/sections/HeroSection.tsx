@@ -32,13 +32,13 @@ const itemVariants = {
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pb-20 px-4 overflow-hidden">
-      {/* Background Gradient Statico - Ottimizzato Safari */}
+      {/* Background Gradient Animated - Premium Effect */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-primary/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/10 via-background via-50% to-accent-primary/5 gradient-animated" />
 
-        {/* Effetti Glow Statici - Safari Friendly */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-2xl opacity-40" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-2xl opacity-30" />
+        {/* Effetti Glow Animati - Premium Depth */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-primary/15 rounded-full blur-3xl opacity-40 gradient-glow-rotate" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-primary/10 rounded-full blur-3xl opacity-30" />
       </div>
 
       <Container className="relative z-10">

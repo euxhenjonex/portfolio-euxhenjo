@@ -146,6 +146,7 @@ header, footer {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
+
 }
 
 /* Shimmer animation for skeleton loaders */
@@ -161,6 +162,34 @@ header, footer {
 .animate-shimmer {
   animation: shimmer 2s infinite;
   /* will-change removed for Safari compatibility */
+}
+
+/* Gradient Background Animations - Subtle & Premium */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.gradient-glow-rotate {
+  animation: gradient-rotate 20s linear infinite;
 }
 
 /* Enhanced focus indicators for accessibility */
