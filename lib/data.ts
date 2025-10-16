@@ -266,6 +266,44 @@ export const projects = [
     },
   },
   {
+    id: "leo-assistant",
+    title: "Leo AI Assistant",
+    tagline: "Assistente AI conversazionale integrato per portfolio web",
+    description:
+      "Chatbot AI intelligente con GPT-4o-mini che risponde a domande su servizi, progetti e competenze in tempo reale con streaming delle risposte.",
+    image: "/images/projects/leo-assistant.webp",
+    tags: ["OpenAI", "Next.js", "Streaming AI", "React"],
+    featured: false,
+    link: "/#",
+    status: "Online",
+    overview:
+      "Leo è un assistente AI conversazionale integrato direttamente in questo portfolio. Costruito con OpenAI GPT-4o-mini e Next.js, offre risposte in tempo reale su servizi, progetti e competenze tecniche. Utilizza streaming delle risposte per un'esperienza utente fluida e una knowledge base embedded per risposte precise e contestualizzate.",
+    challenge:
+      "I visitatori del portfolio avevano bisogno di un modo rapido per ottenere informazioni specifiche senza navigare multiple pagine. L'obiettivo era creare un'esperienza conversazionale che sembrasse naturale, fornisse risposte accurate e rimanesse focalizzata sul contesto professionale, evitando domande off-topic.",
+    solution: "Chatbot GPT-4o-mini con knowledge base personalizzata e scope restriction intelligente",
+    techStack: [
+      "OpenAI GPT-4o-mini",
+      "Next.js 15 API Routes",
+      "Vercel AI SDK",
+      "React + TypeScript",
+      "Framer Motion",
+      "React Markdown",
+      "Rate Limiting"
+    ],
+    results: [
+      "Tempo di risposta < 2 secondi grazie allo streaming",
+      "Rate limiting 10 req/10min per protezione anti-abuse",
+      "Knowledge base embedded con 200+ righe di contesto",
+      "100% mobile responsive con animazioni Framer Motion",
+    ],
+    cta: "Vuoi un assistente AI personalizzato per il tuo sito web?",
+    seo: {
+      metaTitle: "Leo AI Assistant – Chatbot GPT Integrato by Euxhenjo Nexhipi",
+      metaDescription:
+        "Assistente AI conversazionale costruito con GPT-4o-mini e Next.js. Streaming real-time, knowledge base personalizzata e rate limiting integrato.",
+    },
+  },
+  {
     id: "appointment-reminder",
     title: "Sistema di Promemoria Appuntamenti",
     tagline: "Workflow SMS automatizzato per promemoria appuntamenti e richieste recensioni",
