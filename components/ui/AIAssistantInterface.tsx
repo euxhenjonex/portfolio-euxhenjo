@@ -184,108 +184,108 @@ export default function AIAssistantInterface() {
             className="mb-6"
           >
             <ScrollArea className="h-[300px] md:h-[400px]" ref={scrollRef}>
-              <div className="space-y-4 px-2">
-                {messages.map((message) => (
-                  <div
-                    key={message.id}
-                    className={cn(
-                      "flex gap-3",
-                      message.role === "user" ? "justify-end" : "justify-start"
-                    )}
-                  >
+                <div className="space-y-4 px-2 pb-4">
+                  {messages.map((message) => (
                     <div
+                      key={message.id}
                       className={cn(
-                        "rounded-2xl px-5 py-3 text-sm max-w-[80%]",
-                        message.role === "user"
-                          ? "bg-muted/80 text-foreground"
-                          : "bg-muted/40 text-foreground/90"
+                        "flex gap-3",
+                        message.role === "user" ? "justify-end" : "justify-start"
                       )}
                     >
-                      {message.role === "assistant" ? (
-                        <ReactMarkdown
-                          remarkPlugins={[remarkGfm]}
-                          components={{
-                            p: ({ children }) => (
-                              <p className="mb-2 last:mb-0 leading-relaxed">
-                                {children}
-                              </p>
-                            ),
-                            strong: ({ children }) => (
-                              <strong className="font-semibold text-foreground">
-                                {children}
-                              </strong>
-                            ),
-                            a: ({ href, children }) => (
-                              <a
-                                href={href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-foreground hover:underline font-medium underline-offset-2 underline"
-                              >
-                                {children}
-                              </a>
-                            ),
-                            ul: ({ children }) => (
-                              <ul className="list-disc ml-4 mb-2 space-y-1">
-                                {children}
-                              </ul>
-                            ),
-                            ol: ({ children }) => (
-                              <ol className="list-decimal ml-4 mb-2 space-y-1">
-                                {children}
-                              </ol>
-                            ),
-                            li: ({ children }) => (
-                              <li className="leading-relaxed">{children}</li>
-                            ),
-                            code: ({ children }) => (
-                              <code className="bg-muted-foreground/20 px-1 py-0.5 rounded text-xs">
-                                {children}
-                              </code>
-                            ),
-                          }}
-                        >
-                          {message.content}
-                        </ReactMarkdown>
-                      ) : (
-                        message.content
-                      )}
-                    </div>
-                  </div>
-                ))}
-                {isTyping && (
-                  <div className="flex gap-3 justify-start">
-                    <div className="rounded-2xl px-5 py-3 bg-muted/40">
-                      <div className="flex items-center gap-1">
-                        <motion.div
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
-                          className="w-2 h-2 bg-muted-foreground/60 rounded-full"
-                        />
-                        <motion.div
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{
-                            duration: 0.6,
-                            repeat: Infinity,
-                            delay: 0.2,
-                          }}
-                          className="w-2 h-2 bg-muted-foreground/60 rounded-full"
-                        />
-                        <motion.div
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{
-                            duration: 0.6,
-                            repeat: Infinity,
-                            delay: 0.4,
-                          }}
-                          className="w-2 h-2 bg-muted-foreground/60 rounded-full"
-                        />
+                      <div
+                        className={cn(
+                          "rounded-2xl px-5 py-3 text-sm max-w-[80%] text-left",
+                          message.role === "user"
+                            ? "bg-muted/80 text-foreground"
+                            : "bg-muted/40 text-foreground/90"
+                        )}
+                      >
+                        {message.role === "assistant" ? (
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                              p: ({ children }) => (
+                                <p className="mb-2 last:mb-0 leading-relaxed text-left">
+                                  {children}
+                                </p>
+                              ),
+                              strong: ({ children }) => (
+                                <strong className="font-semibold text-foreground">
+                                  {children}
+                                </strong>
+                              ),
+                              a: ({ href, children }) => (
+                                <a
+                                  href={href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-foreground hover:underline font-medium underline-offset-2 underline"
+                                >
+                                  {children}
+                                </a>
+                              ),
+                              ul: ({ children }) => (
+                                <ul className="list-disc ml-4 mb-2 space-y-1">
+                                  {children}
+                                </ul>
+                              ),
+                              ol: ({ children }) => (
+                                <ol className="list-decimal ml-4 mb-2 space-y-1">
+                                  {children}
+                                </ol>
+                              ),
+                              li: ({ children }) => (
+                                <li className="leading-relaxed">{children}</li>
+                              ),
+                              code: ({ children }) => (
+                                <code className="bg-muted-foreground/20 px-1 py-0.5 rounded text-xs">
+                                  {children}
+                                </code>
+                              ),
+                            }}
+                          >
+                            {message.content}
+                          </ReactMarkdown>
+                        ) : (
+                          message.content
+                        )}
                       </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            </ScrollArea>
+                  ))}
+                  {isTyping && (
+                    <div className="flex gap-3 justify-start">
+                      <div className="rounded-2xl px-5 py-3 bg-muted/40">
+                        <div className="flex items-center gap-1">
+                          <motion.div
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 0.6, repeat: Infinity, delay: 0 }}
+                            className="w-2 h-2 bg-muted-foreground/60 rounded-full"
+                          />
+                          <motion.div
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{
+                              duration: 0.6,
+                              repeat: Infinity,
+                              delay: 0.2,
+                            }}
+                            className="w-2 h-2 bg-muted-foreground/60 rounded-full"
+                          />
+                          <motion.div
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{
+                              duration: 0.6,
+                              repeat: Infinity,
+                              delay: 0.4,
+                            }}
+                            className="w-2 h-2 bg-muted-foreground/60 rounded-full"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </ScrollArea>
           </motion.div>
         )}
       </AnimatePresence>
