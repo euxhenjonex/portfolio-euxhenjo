@@ -1,4 +1,9 @@
 {
+  "env": {
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "16000",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
+    "DISABLE_COST_WARNINGS": "1"
+  },
   "permissions": {
     "allow": [
       "Bash(npm view:*)",
@@ -11,14 +16,16 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "Bash(git clean -fd)",
+      "Bash(npm uninstall @fontsource/space-grotesk)",
+      "Bash(git branch -D feat/ui-ux-improvements)",
+      "Bash(git checkout -b feat/ai-assistant-hero)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill -9)",
+      "Bash(pkill -f \"next dev\")"
     ],
     "deny": [],
     "ask": []
-  },
-  "env": {
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "16000",
-    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1",
-    "DISABLE_COST_WARNINGS": "1"
   }
 }

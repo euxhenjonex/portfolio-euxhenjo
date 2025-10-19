@@ -35,15 +35,15 @@ export default function ProcessSection() {
                   <div className="card-elevated h-full p-6">
                     <div className="flex items-start gap-4 mb-4">
                       {/* Step Number */}
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-primary/15 ring-1 ring-accent-primary/30 flex items-center justify-center">
-                        <span className="text-lg font-bold text-accent-primary">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/15 ring-1 ring-primary/30 flex items-center justify-center">
+                        <span className="text-lg font-bold text-primary">
                           {step.step}
                         </span>
                       </div>
 
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <Icon className="icon-base text-accent-primary" />
+                          <Icon className="icon-base text-foreground" />
                           <h3 className="heading-sm">{step.title}</h3>
                         </div>
                       </div>
@@ -63,7 +63,7 @@ export default function ProcessSection() {
                               key={i}
                               className="flex items-start gap-2 text-sm text-muted-foreground"
                             >
-                              <Check className="icon-sm text-accent-primary flex-shrink-0 mt-0.5" />
+                              <Check className="icon-sm text-foreground flex-shrink-0 mt-0.5" />
                               <span>{deliverable}</span>
                             </li>
                           ))}

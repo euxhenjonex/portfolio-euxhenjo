@@ -10,7 +10,7 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
 import { personalInfo } from "@/lib/data";
-import { ChatWidget, SpeedInsights } from "@/components/ClientComponents";
+import { SpeedInsights } from "@/components/ClientComponents";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -171,7 +171,6 @@ export default function RootLayout({
           <Header />
           <main id="main-content">{children}</main>
           <Footer />
-          <ChatWidget />
         </ThemeProvider>
       </body>
     </html>
