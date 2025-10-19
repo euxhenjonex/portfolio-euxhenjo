@@ -17,7 +17,13 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git rebase:*)",
-      "Bash(git merge feat/ai-assistant-hero --no-edit)"
+      "Bash(git clean -fd)",
+      "Bash(npm uninstall @fontsource/space-grotesk)",
+      "Bash(git branch -D feat/ui-ux-improvements)",
+      "Bash(git checkout -b feat/ai-assistant-hero)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill -9)",
+      "Bash(pkill -f \"next dev\")"
     ],
     "deny": [],
     "ask": []

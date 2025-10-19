@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ButtonLink } from "@/components/ui/button";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
-import { Calendar, ArrowRight } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import Container from "../layout/Container";
+import AIAssistantInterface from "@/components/ui/AIAssistantInterface";
 
 // Varianti di animazione leggere - ottimizzate per LCP
 const containerVariants = {
@@ -33,13 +31,13 @@ const itemVariants = {
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pb-20 px-4 overflow-hidden">
-      {/* Background Gradient Animated - Premium Effect */}
+      {/* Background Gradient Animated - Monocromatico */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/10 via-background via-50% to-accent-primary/5 gradient-animated" />
+        <div className="absolute inset-0 bg-gradient-to-br from-muted/10 via-background via-50% to-muted/5 gradient-animated" />
 
-        {/* Effetti Glow Animati - Premium Depth */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-primary/15 rounded-full blur-3xl opacity-40 gradient-glow-rotate" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-primary/10 rounded-full blur-3xl opacity-30" />
+        {/* Effetti Glow Animati - Monocromatico */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-muted/15 rounded-full blur-3xl opacity-40 gradient-glow-rotate" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-muted/10 rounded-full blur-3xl opacity-30" />
       </div>
 
       <Container className="relative z-10">
@@ -69,54 +67,16 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Availability Badge */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="mb-8">
             <AvailabilityBadge
               available={personalInfo.available}
               text={personalInfo.availability}
             />
           </motion.div>
 
-          {/* Greeting */}
-          <motion.p variants={itemVariants} className="text-lg md:text-xl font-medium mb-4 mt-3">
-            Ciao, sono {personalInfo.firstName} 👋
-          </motion.p>
-
-          {/* Main Headline */}
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] tracking-tight mb-6 px-4">
-            <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
-              {personalInfo.headline}
-            </span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p variants={itemVariants} className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-6 px-4">
-            {personalInfo.title}
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 sm:px-0">
-            {/* Primary CTA */}
-            <ButtonLink
-              size="lg"
-              href="https://cal.com/euxhenjonex/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full max-w-[280px] sm:w-auto group rounded-full px-8 py-4 text-sm font-medium uppercase tracking-wider transition-all hover:shadow-lg gap-2 justify-center"
-            >
-              <Calendar className="icon-sm" aria-hidden="true" />
-              <span>Prenota una call gratuita</span>
-            </ButtonLink>
-
-            {/* Secondary CTA */}
-            <ButtonLink
-              size="lg"
-              variant="outline"
-              href="/#projects"
-              className="w-full max-w-[280px] sm:w-auto group rounded-full px-8 py-4 text-sm font-medium uppercase tracking-wider transition-all hover:bg-primary/5 gap-2 justify-center"
-            >
-              Guarda i progetti
-              <ArrowRight className="icon-sm transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </ButtonLink>
+          {/* AI Assistant Interface */}
+          <motion.div variants={itemVariants} className="w-full">
+            <AIAssistantInterface />
           </motion.div>
         </motion.div>
       </Container>
