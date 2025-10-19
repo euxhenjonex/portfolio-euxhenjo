@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { Calendar } from "lucide-react";
@@ -9,16 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import ImageSkeleton from "@/components/ui/ImageSkeleton";
 import Container from "../layout/Container";
-
-// Varianti di animazione leggere
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
 
 export default function ServicesSection() {
   const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
@@ -30,30 +19,23 @@ export default function ServicesSection() {
   return (
     <section id="services" className="section-padding bg-muted/30">
       <Container>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="space-y-12"
-        >
+        <div className="space-y-12 animate-fade-in">
           {/* Section Title */}
-          <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto">
             <h2 className="heading-lg mb-4">
               Come Posso Aiutarti
             </h2>
             <p className="body-lg">
               Trasforma il tuo business con soluzioni AI che fanno risparmiare tempo, riducono i costi e sbloccano nuove possibilità.
             </p>
-          </motion.div>
+          </div>
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {services.map((service, index) => {
+            {services.map((service) => {
               return (
-                <motion.div
+                <div
                   key={service.id}
-                  variants={fadeInUp}
-                  transition={{ delay: index * 0.1 }}
                   className="group relative"
                 >
                   {/* Card Container */}
@@ -98,19 +80,13 @@ export default function ServicesSection() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
 
           {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center pt-8"
-          >
+          <div className="text-center pt-8">
             <p className="body-lg mb-6">
               Pronto a integrare l&apos;AI nel tuo workflow?
             </p>
@@ -127,8 +103,8 @@ export default function ServicesSection() {
             <p className="text-sm text-muted-foreground mt-4">
               Nessun impegno, solo idee pratiche per il tuo business.
             </p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </Container>
     </section>
   );

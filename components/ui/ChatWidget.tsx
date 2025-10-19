@@ -135,6 +135,7 @@ export default function ChatWidget() {
           aria-label={isOpen ? "Chiudi chat AI" : "Apri chat AI"}
           className="h-12 w-12 md:h-14 md:w-14 rounded-full shadow-lg hover:shadow-xl transition-shadow group relative"
         >
+          <span className="sr-only">{isOpen ? "Chiudi chat AI" : "Apri chat AI"}</span>
           <AnimatePresence mode="wait">
             {isOpen ? (
               <motion.div
@@ -144,7 +145,7 @@ export default function ChatWidget() {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <X className="icon-lg" />
+                <X className="icon-lg" aria-hidden="true" />
               </motion.div>
             ) : (
               <motion.div
@@ -164,7 +165,7 @@ export default function ChatWidget() {
                   }
                 }}
               >
-                <Sparkles className="icon-lg" />
+                <Sparkles className="icon-lg" aria-hidden="true" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -206,7 +207,7 @@ export default function ChatWidget() {
                   size="icon"
                   onClick={() => setIsOpen(false)}
                   aria-label="Chiudi chat"
-                  className="h-10 w-10 min-h-[44px] min-w-[44px] rounded-full hover:bg-primary-foreground/20 text-primary-foreground"
+                  className="h-10 w-10 tap-target-responsive rounded-full hover:bg-primary-foreground/20 text-primary-foreground"
                 >
                   <X className="icon-sm" />
                 </Button>
@@ -232,7 +233,7 @@ export default function ChatWidget() {
                             handleSubmit(e, q);
                           }}
                           aria-label={`Domanda suggerita: ${q}`}
-                          className="w-full text-left text-xs p-3 rounded-2xl bg-card ring-1 ring-border/50 hover:shadow-lg hover:ring-border/80 focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 transition-all duration-300 min-h-[44px]"
+                          className="w-full text-left text-xs p-3 rounded-2xl bg-card ring-1 ring-border/50 hover:shadow-lg hover:ring-border/80 focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 transition-all duration-300 tap-target-responsive"
                         >
                           {q}
                         </button>
@@ -340,7 +341,7 @@ export default function ChatWidget() {
                     size="icon"
                     disabled={isLoading || !input.trim()}
                     aria-label="Invia messaggio"
-                    className="min-h-[44px] min-w-[44px] rounded-full"
+                    className="tap-target-responsive rounded-full"
                   >
                     {isLoading ? (
                       <Loader2 className="icon-sm animate-spin" />

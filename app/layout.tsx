@@ -132,36 +132,18 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cal.com" />
         <link rel="dns-prefetch" href="https://vercel.com" />
         
-        {/* Preload Critical Font */}
-        <link
-          rel="preload"
-          href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-
-        {/* Preload LCP Image */}
-        <link
-          rel="preload"
-          href="/images/avatar/profile.webp"
-          as="image"
-          type="image/webp"
-          fetchPriority="high"
-        />
-        
         {/* JSON-LD schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* ✅ Google Analytics */}
+        {/* ✅ Google Analytics - Lazy loaded per ridurre TBT */}
         <Script
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-J128K5CWPX"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

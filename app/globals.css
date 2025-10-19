@@ -192,6 +192,33 @@ header, footer {
   animation: gradient-rotate 20s linear infinite;
 }
 
+/* Simple fade-in animation for static sections */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+/* Screen reader only text - visually hidden */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Enhanced focus indicators for accessibility */
 *:focus-visible {
   @apply outline-none ring-2 ring-foreground ring-offset-2 ring-offset-background rounded-sm;
@@ -202,9 +229,22 @@ button:focus-visible {
   @apply outline-none ring-2 ring-foreground ring-offset-2 ring-offset-background;
 }
 
-/* Minimum tap target size for mobile accessibility (44x44px) */
+/* Minimum tap target size for mobile accessibility (48x48px recommended) */
 .tap-target {
-  @apply min-h-[44px] min-w-[44px] inline-flex items-center justify-center;
+  @apply min-h-[48px] min-w-[48px] inline-flex items-center justify-center;
+}
+
+/* Responsive tap targets - 48px on mobile, 44px on desktop */
+@media (max-width: 640px) {
+  .tap-target-responsive {
+    @apply min-h-[48px] min-w-[48px];
+  }
+}
+
+@media (min-width: 641px) {
+  .tap-target-responsive {
+    @apply min-h-[44px] min-w-[44px];
+  }
 }
 
 /* Remove heavy gradient animation - use static gradient instead */

@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 import { Calendar, ArrowRight } from "lucide-react";
 import { personalInfo } from "@/lib/data";
@@ -53,18 +54,18 @@ export default function HeroSection() {
             {/* Glow senza blur - Safari friendly */}
             <div className="absolute inset-0 bg-primary/20 rounded-[28%] opacity-50" />
 
-            {/* Avatar container con bordo arrotondato iOS-style */}
-            <Avatar className="relative w-20 h-20 md:w-24 md:h-24 rounded-[28%] ring-2 ring-primary/30 shadow-lg">
-              <AvatarImage
+            {/* Avatar container con Next.js Image ottimizzato per LCP */}
+            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-[28%] ring-2 ring-primary/30 shadow-lg overflow-hidden">
+              <Image
                 src="/images/avatar/profile.webp"
                 alt={`${personalInfo.name} - AI Integration Specialist and Developer`}
-                fetchPriority="high"
-                className="object-cover"
+                width={96}
+                height={96}
+                priority
+                sizes="(max-width: 768px) 80px, 96px"
+                className="object-cover w-full h-full"
               />
-              <AvatarFallback className="text-xl font-bold bg-muted">
-                {personalInfo.firstName.charAt(0)}
-              </AvatarFallback>
-            </Avatar>
+            </div>
           </motion.div>
 
           {/* Availability Badge */}

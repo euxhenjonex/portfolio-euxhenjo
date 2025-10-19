@@ -1,20 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import Container from "../layout/Container";
 import ImageSkeleton from "@/components/ui/ImageSkeleton";
-
-// Varianti di animazione leggere
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
 
 export default function AboutSection() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -22,23 +11,16 @@ export default function AboutSection() {
   return (
     <section id="about" className="section-padding bg-muted/30">
       <Container>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="animate-fade-in">
           {/* Section Title */}
-          <motion.div variants={fadeInUp} className="text-center mb-12">
+          <div className="text-center mb-12">
             <h2 className="heading-lg mb-4">Chi Sono</h2>
-          </motion.div>
+          </div>
 
           {/* Content: 2 Columns Layout */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
             {/* Left: Professional Photo */}
-            <motion.div
-              variants={fadeInUp}
-              className="relative w-full aspect-[3/4] max-w-md mx-auto"
-            >
+            <div className="relative w-full aspect-[3/4] max-w-md mx-auto">
               {/* Photo container */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden ring-1 ring-border/50 shadow-2xl">
                 {!imageLoaded && <ImageSkeleton />}
@@ -52,10 +34,10 @@ export default function AboutSection() {
                   priority
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* Right: Bio Text */}
-            <motion.div variants={fadeInUp} className="space-y-6">
+            <div className="space-y-6">
               <div className="space-y-6">
                 <div className="space-y-6 body-base">
                   <p>
@@ -73,13 +55,7 @@ export default function AboutSection() {
                 </div>
 
                 {/* Bento Card - Cosa sto studiando */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-accent-primary/5 via-background to-accent-primary/5 border border-accent-primary/10"
-                >
+                <div className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-accent-primary/5 via-background to-accent-primary/5 border border-accent-primary/10">
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
@@ -115,11 +91,11 @@ export default function AboutSection() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

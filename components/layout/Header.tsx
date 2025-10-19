@@ -116,7 +116,7 @@ export default function Header() {
                   <ButtonLink
                     variant="ghost"
                     size="icon"
-                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
                     href={socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -135,7 +135,7 @@ export default function Header() {
                   <ButtonLink
                     variant="ghost"
                     size="icon"
-                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
                     href={socialLinks.x}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -160,7 +160,7 @@ export default function Header() {
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
-              className="min-h-[44px] min-w-[44px]"
+              className="tap-target-responsive"
             >
               {isMobileMenuOpen ? (
                 <CloseIcon className="icon-lg" aria-hidden="true" />
@@ -182,7 +182,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="flex items-center gap-2 text-sm font-medium px-3 py-3 rounded-2xl hover:bg-muted/50 transition-all duration-300 min-h-[44px]"
+                    className="flex items-center gap-2 text-sm font-medium px-3 py-3 rounded-2xl hover:bg-muted/50 transition-all duration-300 tap-target-responsive"
                   >
                     <Icon className="icon-sm opacity-60" aria-hidden="true" />
                     {link.name}
@@ -195,7 +195,7 @@ export default function Header() {
                 <ButtonLink
                   variant="ghost"
                   size="icon"
-                  className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
+                  className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
                   href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -206,7 +206,7 @@ export default function Header() {
                 <ButtonLink
                   variant="ghost"
                   size="icon"
-                  className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
+                  className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
                   href={socialLinks.x}
                   target="_blank"
                   rel="noopener noreferrer"

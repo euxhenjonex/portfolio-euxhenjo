@@ -52,13 +52,13 @@ export default function Footer() {
                   <ButtonLink
                     variant="ghost"
                     size="icon"
-                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
                     href={socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="h-5 w-5" />
+                    <Linkedin className="h-5 w-5" aria-hidden="true" />
                   </ButtonLink>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -71,13 +71,13 @@ export default function Footer() {
                   <ButtonLink
                     variant="ghost"
                     size="icon"
-                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
                     href={socialLinks.x}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="X (Twitter)"
                   >
-                    <XIcon className="h-5 w-5" />
+                    <XIcon className="h-5 w-5" aria-hidden="true" />
                   </ButtonLink>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -90,11 +90,11 @@ export default function Footer() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="hover:bg-muted/50 transition-all duration-300 rounded-full min-h-[44px] min-w-[44px]"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
                     onClick={handleEmailClick}
                     aria-label="Copy email to clipboard"
                   >
-                    <Mail className="h-5 w-5" />
+                    <Mail className="h-5 w-5" aria-hidden="true" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -112,8 +112,8 @@ export default function Footer() {
           {/* Divider */}
           <div className="w-full max-w-xs h-px bg-border" />
 
-          {/* Copyright */}
-          <p className="text-xs text-muted-foreground text-center">
+          {/* Copyright - aumentato contrast per WCAG AA */}
+          <p className="text-xs text-muted-foreground/90 text-center">
             © {currentYear} {personalInfo.name} · Tutti i diritti riservati
           </p>
         </div>
