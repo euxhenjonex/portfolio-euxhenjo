@@ -2,9 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Loader2, ArrowUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Loader2, ArrowUp } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import ReactMarkdown from "react-markdown";
@@ -50,8 +48,12 @@ export default function AIAssistantInterface() {
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
+  const [displayedTitle, setDisplayedTitle] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const fullTitle = "Chiedimi qualsiasi cosa su Euxhenjo";
 
   // Auto-scroll when messages change
   useEffect(() => {
@@ -72,6 +74,34 @@ export default function AIAssistantInterface() {
 
     return () => clearInterval(scrollInterval);
   }, [isLoading]);
+
+  // Typing effect for title
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingSpeed = 80; // ms per character
+
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullTitle.length) {
+        setDisplayedTitle(fullTitle.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+        // Keep cursor blinking for 2 more seconds, then hide it
+        setTimeout(() => setShowCursor(false), 2000);
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
+  // Cursor blink effect
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 530); // Blink speed
+
+    return () => clearInterval(cursorInterval);
+  }, []);
 
   // Auto-focus input on mount (desktop only)
   useEffect(() => {
@@ -160,16 +190,38 @@ export default function AIAssistantInterface() {
   };
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className="w-full max-w-2xl mx-auto"
-    >
-      {/* Title - Minimalist */}
+    <>
+      <style dangerouslySetInnerHTML={{__html: `
+        .ai-input:focus,
+        .ai-input:focus-visible,
+        .ai-input:focus-within {
+          outline: none !important;
+          box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+          --tw-ring-width: 0px !important;
+          --tw-ring-offset-width: 0px !important;
+          --tw-ring-shadow: 0 0 #0000 !important;
+          --tw-ring-offset-shadow: 0 0 #0000 !important;
+        }
+      `}} />
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="w-full max-w-2xl mx-auto"
+      >
+      {/* Title - Minimalist with Typing Effect */}
       <motion.div variants={itemVariants} className="mb-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-normal mb-3 text-foreground tracking-tight">
-          Chiedimi qualsiasi cosa su Euxhenjo
+        <h2 className="text-3xl md:text-4xl font-normal mb-3 text-foreground tracking-tight min-h-[3rem] md:min-h-[3.5rem]">
+          {displayedTitle}
+          <span
+            className={`inline-block w-0.5 h-8 md:h-10 bg-foreground ml-1 align-middle transition-opacity duration-100 ${
+              showCursor && displayedTitle.length < fullTitle.length
+                ? "opacity-100"
+                : displayedTitle.length === fullTitle.length && showCursor
+                ? "opacity-100"
+                : "opacity-0"
+            }`}
+          />
         </h2>
       </motion.div>
 
@@ -301,7 +353,7 @@ export default function AIAssistantInterface() {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Chiedimi cosa vuoi sapere..."
               disabled={isLoading}
-              className="w-full h-14 md:h-16 px-6 pr-14 text-base md:text-lg bg-muted/30 backdrop-blur-sm rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-muted-foreground/20 transition-all placeholder:text-muted-foreground/50 text-foreground disabled:opacity-50"
+              className="ai-input w-full h-14 md:h-16 px-6 pr-14 text-base md:text-lg bg-muted/30 backdrop-blur-md rounded-full border border-white/10 focus:border-white/25 transition-all placeholder:text-muted-foreground/50 text-foreground disabled:opacity-50"
             />
             <button
               type="submit"
@@ -345,9 +397,10 @@ export default function AIAssistantInterface() {
         variants={itemVariants}
         className="text-center text-sm text-muted-foreground/60"
       >
-        oppure esplora le sezioni{" "}
+        Scorri per scoprire di più{" "}
         <span className="inline-block">↓</span>
       </motion.p>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }

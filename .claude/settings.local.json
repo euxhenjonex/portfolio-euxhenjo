@@ -23,7 +23,9 @@
       "Bash(git checkout -b feat/ai-assistant-hero)",
       "Bash(lsof -ti:3000)",
       "Bash(xargs kill -9)",
-      "Bash(pkill -f \"next dev\")"
+      "Bash(pkill -f \"next dev\")",
+      "Bash(npm install:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

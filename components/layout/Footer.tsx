@@ -1,6 +1,6 @@
 "use client";
 
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, Github } from "lucide-react";
 import { Button, ButtonLink } from "@/components/ui/button";
 import {
   Tooltip,
@@ -82,6 +82,25 @@ export default function Footer() {
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Seguimi su X</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <ButtonLink
+                    variant="ghost"
+                    size="icon"
+                    className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
+                    href={socialLinks.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <Github className="h-5 w-5" aria-hidden="true" />
+                  </ButtonLink>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Vedi i miei progetti</p>
                 </TooltipContent>
               </Tooltip>
 

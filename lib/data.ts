@@ -13,6 +13,7 @@ export const personalInfo = {
 export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/euxhenjonex/",
   x: "https://x.com/euxhenjonex",
+  github: "https://github.com/euxhenjonex",
 };
 
 export const process = [
@@ -51,61 +52,74 @@ export const process = [
 ];
 
 export const techStack = [
-  // AI Models
+  // Frontend
   {
-    name: "OpenAI",
-    icon: "openai",
-    category: "ai-models",
-    description: "GPT per la creazione di agenti personalizzati e il miglioramento dei testi.",
+    name: "Next.js",
+    icon: "nextjs",
+    category: "frontend",
+    description: "Framework React per applicazioni web moderne e performanti",
   },
   {
-    name: "Anthropic (Claude)",
-    icon: "anthropic",
-    category: "ai-models",
-    description: "Claude per conversazioni naturali, analisi e sviluppo assistito da AI",
+    name: "React",
+    icon: "react",
+    category: "frontend",
+    description: "Libreria JavaScript per interfacce utente interattive",
   },
   {
-    name: "Google Gemini",
-    icon: "gemini",
-    category: "ai-models",
-    description: "Modelli multimodali per elaborazione testi, immagini e video",
+    name: "Tailwind CSS",
+    icon: "tailwind",
+    category: "frontend",
+    description: "Framework CSS utility-first per design rapido e personalizzabile",
   },
   {
-    name: "Perplexity",
-    icon: "perplexity",
-    category: "ai-models",
-    description: "AI search per ricerche intelligenti e risposte accurate",
+    name: "shadcn/ui",
+    icon: "shadcn",
+    category: "frontend",
+    description: "Componenti UI accessibili e personalizzabili per React",
+  },
+  // Backend
+  {
+    name: "Python",
+    icon: "python",
+    category: "backend",
+    description: "Linguaggio versatile per automazioni, AI e backend scalabili",
+  },
+  {
+    name: "Supabase",
+    icon: "supabase",
+    category: "backend",
+    description: "Database PostgreSQL con autenticazione e API real-time",
   },
   {
     name: "Pinecone",
     icon: "pinecone",
-    category: "ai-models",
+    category: "backend",
     description: "Database vettoriale per sistemi RAG e ricerca semantica",
   },
+  // AI & Automation
   {
-    name: "LangChain",
-    icon: "langchain",
-    category: "ai-models",
-    description: "Framework per costruire applicazioni AI complesse e agenti",
-  },
-  // No-Code Tools
-  {
-    name: "Lovable",
-    icon: "lovable",
-    category: "no-code",
-    description: "Piattaforma no-code AI-powered per creare web app velocemente",
+    name: "Claude Code",
+    icon: "anthropic",
+    category: "ai-automation",
+    description: "Sviluppo assistito da AI con Claude (usato per questo sito!)",
   },
   {
-    name: "Cursor",
-    icon: "cursor",
-    category: "no-code",
-    description: "Editor di codice con AI per sviluppo assistito intelligente",
+    name: "n8n",
+    icon: "n8n",
+    category: "ai-automation",
+    description: "Workflow automation open-source con integrazioni illimitate",
   },
   {
-    name: "Replit",
-    icon: "replit",
-    category: "no-code",
-    description: "Ambiente di sviluppo cloud per prototipazione rapida",
+    name: "ChatGPT",
+    icon: "openai",
+    category: "ai-automation",
+    description: "GPT per la creazione di agenti personalizzati e chatbot intelligenti",
+  },
+  {
+    name: "Gemini",
+    icon: "gemini",
+    category: "ai-automation",
+    description: "Modelli multimodali Google per elaborazione testi, immagini e video",
   },
   // CMS & E-commerce
   {
@@ -126,111 +140,38 @@ export const techStack = [
     category: "cms",
     description: "Plugin WordPress per e-commerce personalizzabile",
   },
-  // Automation
+  // Hosting & Infrastructure
   {
-    name: "n8n",
-    icon: "n8n",
-    category: "automation",
-    description: "Workflow automation open-source con integrazioni illimitate",
+    name: "Vercel",
+    icon: "vercel",
+    category: "hosting",
+    description: "Hosting veloce e CI/CD per progetti Next.js e React",
   },
+  // Development Tools
   {
-    name: "Make",
-    icon: "make",
-    category: "automation",
-    description: "Automazione visuale per connettere app e servizi",
-  },
-  {
-    name: "Zapier",
-    icon: "zapier",
-    category: "automation",
-    description: "Automazione semplice per integrare migliaia di app",
-  },
-  {
-    name: "Telegram Bot API",
-    icon: "telegram",
-    category: "automation",
-    description: "Bot intelligenti per supporto clienti e notifiche Telegram",
-  },
-  {
-    name: "WhatsApp Business API",
-    icon: "whatsapp",
-    category: "automation",
-    description: "Messaggistica business automatizzata su WhatsApp",
-  },
-  {
-    name: "Twilio",
-    icon: "twilio",
-    category: "automation",
-    description: "API per SMS, chiamate e comunicazioni programmabili",
-  },
-  // Development
-  {
-    name: "Next.js",
-    icon: "nextjs",
-    category: "development",
-    description: "Framework React per applicazioni web moderne e performanti",
-  },
-  {
-    name: "React",
-    icon: "react",
-    category: "development",
-    description: "Libreria JavaScript per interfacce utente interattive",
-  },
-  {
-    name: "TypeScript",
-    icon: "typescript",
-    category: "development",
-    description: "JavaScript con tipizzazione per codice più robusto",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "tailwind",
-    category: "development",
-    description: "Framework CSS utility-first per design rapido e personalizzabile",
-  },
-  {
-    name: "Node.js",
-    icon: "nodejs",
-    category: "development",
-    description: "Runtime JavaScript per backend e API scalabili",
-  },
-  // Tools
-  {
-    name: "Claude Code",
-    icon: "claude",
-    category: "tools",
-    description: "Sviluppo assistito da AI con Claude (usato per questo sito!)",
+    name: "Cursor",
+    icon: "cursor",
+    category: "dev-tools",
+    description: "Editor di codice con AI per sviluppo assistito intelligente",
   },
   {
     name: "VSCode",
     icon: "vscode",
-    category: "tools",
+    category: "dev-tools",
     description: "Editor di codice potente ed estensibile",
   },
   {
-    name: "Git",
-    icon: "git",
-    category: "tools",
-    description: "Controllo versione per collaborazione e backup codice",
+    name: "GitHub",
+    icon: "github",
+    category: "dev-tools",
+    description: "Controllo versione e collaborazione per progetti software",
   },
+  // Payments
   {
-    name: "Cal.com",
-    icon: "calendar",
-    category: "tools",
-    description: "Scheduling open-source per gestire appuntamenti",
-  },
-  // Deployment
-  {
-    name: "Vercel",
-    icon: "vercel",
-    category: "deployment",
-    description: "Hosting veloce e CI/CD per progetti Next.js e React",
-  },
-  {
-    name: "Netlify",
-    icon: "netlify",
-    category: "deployment",
-    description: "Deploy automatico per siti statici e Jamstack",
+    name: "Stripe",
+    icon: "stripe",
+    category: "payments",
+    description: "Piattaforma di pagamento completa per e-commerce e subscription",
   },
 ];
 

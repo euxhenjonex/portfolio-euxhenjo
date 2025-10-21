@@ -4,12 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 import Container from "../layout/Container";
 import ImageSkeleton from "@/components/ui/ImageSkeleton";
+import TechStackBento from "@/components/ui/TechStackBento";
 
 export default function AboutSection() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <section id="about" className="section-padding bg-muted/30">
+    <section id="about" className="section-padding bg-muted/30 overflow-hidden">
       <Container>
         <div className="animate-fade-in">
           {/* Section Title */}
@@ -18,7 +19,7 @@ export default function AboutSection() {
           </div>
 
           {/* Content: 2 Columns Layout */}
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start max-w-6xl mx-auto">
             {/* Left: Professional Photo */}
             <div className="relative w-full aspect-[3/4] max-w-md mx-auto">
               {/* Photo container */}
@@ -37,7 +38,7 @@ export default function AboutSection() {
             </div>
 
             {/* Right: Bio Text */}
-            <div className="space-y-6">
+            <div className="space-y-6 w-full min-w-0">
               <div className="space-y-6">
                 <div className="space-y-6 body-base">
                   <p>
@@ -54,44 +55,8 @@ export default function AboutSection() {
                   </p>
                 </div>
 
-                {/* Bento Card - Cosa sto studiando */}
-                <div className="relative mt-8 p-6 rounded-2xl bg-gradient-to-br from-muted/5 via-background to-muted/5 border border-border">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                      <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-                        Attualmente sto studiando
-                      </h3>
-                    </div>
-
-                    <p className="text-base font-medium text-foreground">
-                      Sviluppo di applicazioni LLM avanzate
-                    </p>
-
-                    <div className="grid grid-cols-2 gap-3 text-sm">
-                      <div className="space-y-2">
-                        <div className="flex items-start gap-2">
-                          <span className="text-foreground mt-1">•</span>
-                          <span className="text-muted-foreground">Concetti base e architetture LLM</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-foreground mt-1">•</span>
-                          <span className="text-muted-foreground">Orchestrazione e prompt engineering</span>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-start gap-2">
-                          <span className="text-foreground mt-1">•</span>
-                          <span className="text-muted-foreground">LangChain & LangGraph</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-foreground mt-1">•</span>
-                          <span className="text-muted-foreground">LlamaIndex & RAG patterns</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {/* Bento Card - Tech Stack */}
+                <TechStackBento />
               </div>
             </div>
           </div>

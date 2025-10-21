@@ -15,9 +15,6 @@ const ProcessSection = dynamic(() => import("@/components/sections/ProcessSectio
 const ProjectsSection = dynamic(() => import("@/components/sections/ProjectsSection"), {
   loading: () => <div className="min-h-screen" />,
 });
-const TechStackSection = dynamic(() => import("@/components/sections/TechStackSection"), {
-  loading: () => <div className="min-h-[50vh]" />,
-});
 // TestimonialsSection temporaneamente disattivata - verrà riattivata con recensioni reali
 // const TestimonialsSection = dynamic(() => import("@/components/sections/TestimonialsSection"), {
 //   loading: () => <div className="min-h-[50vh]" />,
@@ -47,7 +44,6 @@ export default function Home() {
       <ServicesSection />
       <ProcessSection />
       <ProjectsSection />
-      <TechStackSection />
       {/* <TestimonialsSection /> */}
       <ContactSection />
     </div>
