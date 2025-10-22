@@ -6,6 +6,7 @@ import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 import { personalInfo } from "@/lib/data";
 import Container from "../layout/Container";
 import AIAssistantInterface from "@/components/ui/AIAssistantInterface";
+import ChromaBackground from "@/components/ui/ChromaBackground";
 
 // Varianti di animazione leggere - ottimizzate per LCP
 const containerVariants = {
@@ -31,13 +32,9 @@ const itemVariants = {
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pb-20 px-4 overflow-hidden">
-      {/* Background Gradient Animated - Monocromatico */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-muted/10 via-background via-50% to-muted/5 gradient-animated" />
-
-        {/* Effetti Glow Animati - Monocromatico */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-muted/15 rounded-full blur-3xl opacity-40 gradient-glow-rotate" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-muted/10 rounded-full blur-3xl opacity-30" />
+      {/* Chroma Background */}
+      <div className="absolute inset-0 -z-10 overflow-hidden bg-background">
+        <ChromaBackground />
       </div>
 
       <Container className="relative z-10">

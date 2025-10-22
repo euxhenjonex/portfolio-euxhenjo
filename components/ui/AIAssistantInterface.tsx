@@ -15,10 +15,10 @@ type Message = {
 };
 
 const quickActions = [
-  "Chi è Euxhenjo?",
-  "Quali progetti ha fatto?",
-  "Quali servizi offre?",
-  "Come posso contattarlo?",
+  "Chi sei?",
+  "Quali progetti hai fatto?",
+  "Quali servizi offri?",
+  "Come posso contattarti?",
 ];
 
 const containerVariants = {
@@ -53,7 +53,7 @@ export default function AIAssistantInterface() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const fullTitle = "Chiedimi qualsiasi cosa su Euxhenjo";
+  const fullTitle = "Ciao! Sono Euxhenjo 👋";
 
   // Auto-scroll when messages change
   useEffect(() => {

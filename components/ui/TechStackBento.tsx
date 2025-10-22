@@ -16,6 +16,7 @@ import {
   SiShopify,
   SiWoo,
   SiVercel,
+  SiDocker,
   SiGithub,
   SiStripe,
 } from "react-icons/si";
@@ -44,6 +45,7 @@ const iconMap: Record<string, React.ElementType> = {
   shopify: SiShopify,
   woocommerce: SiWoo,
   vercel: SiVercel,
+  docker: SiDocker,
   cursor: Code2, // Fallback lucide icon
   vscode: FileCode, // Fallback lucide icon (SiVisualstudiocode not working)
   github: SiGithub,
@@ -67,6 +69,7 @@ const colorMap: Record<string, string> = {
   shopify: "#96BF48",
   woocommerce: "#96588A",
   vercel: "#FFFFFF", // Bianco per Vercel
+  docker: "#2496ED", // Blu Docker (brand color)
   cursor: "#FFFFFF", // Bianco per Cursor
   vscode: "#007ACC",
   github: "#FFFFFF", // Bianco per GitHub (invece di quasi nero)

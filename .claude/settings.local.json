@@ -25,7 +25,10 @@
       "Bash(xargs kill -9)",
       "Bash(pkill -f \"next dev\")",
       "Bash(npm install:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git log:*)",
+      "Bash(gh api:*)",
+      "Bash(git rm:*)"
     ],
     "deny": [],
     "ask": []

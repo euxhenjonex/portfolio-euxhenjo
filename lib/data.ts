@@ -147,6 +147,12 @@ export const techStack = [
     category: "hosting",
     description: "Hosting veloce e CI/CD per progetti Next.js e React",
   },
+  {
+    name: "Docker",
+    icon: "docker",
+    category: "hosting",
+    description: "Containerizzazione per deployment consistente e scalabile",
+  },
   // Development Tools
   {
     name: "Cursor",
