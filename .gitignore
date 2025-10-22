@@ -49,3 +49,28 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Test files
+test-*.js
+test-*.mjs
+test-*.ts
+
+# Lighthouse reports
+lighthouse-report-*.json
+
+# Internal documentation
+BRAND_PALETTE.md
+DESIGN_SYSTEM.md
+FIXES.md
+REFACTORING-COMPLETE.md
+OVERVIEW.md
+SETUP.md
+
+# AI/Claude configuration
+.claude/
+.github/chatmodes/
