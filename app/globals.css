@@ -254,22 +254,22 @@ button:focus-visible {
 
 /* Remove heavy gradient animation - use static gradient instead */
 
-/* Card Elevation System - Premium Design */
+/* Card Elevation System - Glassmorphism iOS-style */
 @layer components {
   .card-elevated {
-    @apply bg-card rounded-2xl ring-1 ring-border/50 shadow-lg transition-all duration-300;
+    @apply bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/15%),theme(backgroundColor.white/5%))] backdrop-blur-xl rounded-3xl border border-white/20 shadow-lg transition-all duration-300;
   }
 
   .card-elevated:hover {
-    @apply shadow-xl ring-border;
+    @apply shadow-xl border-white/30;
   }
 
   .card-flat {
-    @apply bg-card/50 rounded-xl border border-border/50 transition-all duration-300;
+    @apply bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/10%),theme(backgroundColor.white/3%))] backdrop-blur-lg rounded-2xl border border-white/15 transition-all duration-300;
   }
 
   .card-flat:hover {
-    @apply bg-card border-border;
+    @apply border-white/25;
   }
 }
 

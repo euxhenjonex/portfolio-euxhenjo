@@ -11,6 +11,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
 import { personalInfo } from "@/lib/data";
 import { SpeedInsights } from "@/components/ClientComponents";
+import AuroraBackground from "@/components/ui/AuroraBackground";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -156,22 +157,28 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.variable} font-sans antialiased`}>
-        <SkipToContent />
-        <WebVitals />
-        <SmoothScroll />
-        <SpeedInsights />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange={true}
-          forcedTheme="dark"
-        >
-          <Toaster position="bottom-right" richColors />
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        {/* Background Aurora animato */}
+        <AuroraBackground />
+        
+        {/* Contenuto del sito con z-index superiore */}
+        <div className="relative z-10">
+          <SkipToContent />
+          <WebVitals />
+          <SmoothScroll />
+          <SpeedInsights />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+            disableTransitionOnChange={true}
+            forcedTheme="dark"
+          >
+            <Toaster position="bottom-right" richColors />
+            <Header />
+            <main id="main-content">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );

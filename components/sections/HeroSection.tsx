@@ -6,7 +6,7 @@ import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 import { personalInfo } from "@/lib/data";
 import Container from "../layout/Container";
 import AIAssistantInterface from "@/components/ui/AIAssistantInterface";
-import ChromaBackground from "@/components/ui/ChromaBackground";
+import FloatingParticles from "@/components/ui/FloatingParticles";
 
 // Varianti di animazione leggere - ottimizzate per LCP
 const containerVariants = {
@@ -32,11 +32,9 @@ const itemVariants = {
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pb-20 px-4 overflow-hidden">
-      {/* Chroma Background */}
-      <div className="absolute inset-0 -z-10 overflow-hidden bg-background">
-        <ChromaBackground />
-      </div>
-
+      {/* Floating Particles Background */}
+      <FloatingParticles />
+      
       <Container className="relative z-10">
         <motion.div
           variants={containerVariants}
@@ -45,8 +43,13 @@ export default function HeroSection() {
           className="flex flex-col items-center text-center max-w-5xl mx-auto"
         >
           {/* Avatar con stile moderno iOS */}
-          <motion.div variants={itemVariants} className="mb-3 relative">
-            {/* Glow senza blur - Safari friendly */}
+          <motion.div 
+            variants={itemVariants} 
+            className="mb-3 relative"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            {/* Static glow */}
             <div className="absolute inset-0 bg-primary/20 rounded-[28%] opacity-50" />
 
             {/* Avatar container con Next.js Image ottimizzato per LCP */}

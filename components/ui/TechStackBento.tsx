@@ -52,28 +52,28 @@ const iconMap: Record<string, React.ElementType> = {
   stripe: SiStripe,
 };
 
-// Color mapping per icone (brand colors adattati per dark mode)
+// Color mapping per icone (tutte bianche per consistenza)
 const colorMap: Record<string, string> = {
-  nextjs: "#FFFFFF", // Bianco per Next.js (invece di nero)
-  react: "#61DAFB",
-  tailwind: "#06B6D4",
-  shadcn: "#FFFFFF", // Bianco per shadcn/ui
-  python: "#3776AB",
-  supabase: "#3ECF8E",
-  pinecone: "#FF6B00", // Arancione per Pinecone (brand color alternativo)
-  anthropic: "#D4A373", // Beige/oro per Anthropic (ispirato al brand)
-  n8n: "#EA4B71",
-  openai: "#10A37F", // Verde OpenAI (più visibile del viola scuro)
-  gemini: "#4285F4",
-  wordpress: "#21759B",
-  shopify: "#96BF48",
-  woocommerce: "#96588A",
-  vercel: "#FFFFFF", // Bianco per Vercel
-  docker: "#2496ED", // Blu Docker (brand color)
-  cursor: "#FFFFFF", // Bianco per Cursor
-  vscode: "#007ACC",
-  github: "#FFFFFF", // Bianco per GitHub (invece di quasi nero)
-  stripe: "#635BFF",
+  nextjs: "#FFFFFF",
+  react: "#FFFFFF",
+  tailwind: "#FFFFFF",
+  shadcn: "#FFFFFF",
+  python: "#FFFFFF",
+  supabase: "#FFFFFF",
+  pinecone: "#FFFFFF",
+  anthropic: "#FFFFFF",
+  n8n: "#FFFFFF",
+  openai: "#FFFFFF",
+  gemini: "#FFFFFF",
+  wordpress: "#FFFFFF",
+  shopify: "#FFFFFF",
+  woocommerce: "#FFFFFF",
+  vercel: "#FFFFFF",
+  docker: "#FFFFFF",
+  cursor: "#FFFFFF",
+  vscode: "#FFFFFF",
+  github: "#FFFFFF",
+  stripe: "#FFFFFF",
 };
 
 export default function TechStackBento() {

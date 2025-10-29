@@ -72,7 +72,7 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled || isMobileMenuOpen
-          ? "bg-background shadow-lg border-b border-border"
+          ? "bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/15%),theme(backgroundColor.white/5%))] backdrop-blur-xl shadow-lg border-b border-white/20"
           : "bg-transparent border-transparent"
       )}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
@@ -97,7 +97,7 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="group flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-full hover:bg-muted/50 transition-all duration-300"
+                  className="group flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-full hover:bg-white/10 hover:backdrop-blur-md transition-all duration-300"
                 >
                   <Icon className="icon-sm opacity-60" aria-hidden="true" />
                   <span className="relative">
@@ -192,7 +192,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div id="mobile-menu" className="md:hidden py-4 border-t animate-fade-in bg-background">
+          <div id="mobile-menu" className="md:hidden py-6 animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => {
                 const Icon = link.icon;
@@ -201,7 +201,7 @@ export default function Header() {
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="flex items-center gap-2 text-sm font-medium px-3 py-3 rounded-2xl hover:bg-muted/50 transition-all duration-300 tap-target-responsive"
+                    className="flex items-center gap-2 text-sm font-medium px-3 py-3 rounded-2xl hover:bg-white/10 hover:backdrop-blur-md transition-all duration-300 tap-target-responsive"
                   >
                     <Icon className="icon-sm opacity-60" aria-hidden="true" />
                     {link.name}
@@ -210,11 +210,11 @@ export default function Header() {
               })}
 
               {/* Social Links - Mobile */}
-              <div className="flex items-center gap-2 pt-4 border-t">
+              <div className="flex items-center gap-2 pt-4 border-t border-white/20">
                 <ButtonLink
                   variant="ghost"
                   size="icon"
-                  className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
+                  className="hover:bg-white/10 hover:backdrop-blur-md transition-all duration-300 rounded-full tap-target-responsive"
                   href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -225,7 +225,7 @@ export default function Header() {
                 <ButtonLink
                   variant="ghost"
                   size="icon"
-                  className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
+                  className="hover:bg-white/10 hover:backdrop-blur-md transition-all duration-300 rounded-full tap-target-responsive"
                   href={socialLinks.x}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -236,7 +236,7 @@ export default function Header() {
                 <ButtonLink
                   variant="ghost"
                   size="icon"
-                  className="hover:bg-muted/50 transition-all duration-300 rounded-full tap-target-responsive"
+                  className="hover:bg-white/10 hover:backdrop-blur-md transition-all duration-300 rounded-full tap-target-responsive"
                   href={socialLinks.github}
                   target="_blank"
                   rel="noopener noreferrer"
