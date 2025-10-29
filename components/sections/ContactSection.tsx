@@ -14,7 +14,7 @@ export default function ContactSection() {
       toast.success("Email copiata negli appunti!", {
         description: personalInfo.email,
       });
-    } catch (_err) {
+    } catch {
       toast.error("Impossibile copiare l&apos;email", {
         description: "Riprova di nuovo",
       });
