@@ -2,33 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 import { services } from "@/lib/data";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import ImageSkeleton from "@/components/ui/ImageSkeleton";
 import Container from "../layout/Container";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
 
 export default function ServicesSection() {
   const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
@@ -40,30 +19,23 @@ export default function ServicesSection() {
   return (
     <section id="services" className="section-padding">
       <Container>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="space-y-12"
-        >
+        <div className="space-y-12 animate-fade-in">
           {/* Section Title */}
-          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto">
             <h2 className="heading-lg mb-4">
               Come Posso Aiutarti
             </h2>
             <p className="body-lg">
               Trasforma il tuo business con soluzioni AI che fanno risparmiare tempo, riducono i costi e sbloccano nuove possibilità.
             </p>
-          </motion.div>
+          </div>
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {services.map((service) => {
               return (
-                <motion.div
+                <div
                   key={service.id}
-                  variants={itemVariants}
                   className="group relative"
                 >
                   {/* Card Container */}
@@ -108,13 +80,13 @@ export default function ServicesSection() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
 
           {/* CTA */}
-          <motion.div variants={itemVariants} className="text-center pt-8">
+          <div className="text-center pt-8">
             <p className="body-lg mb-6">
               Pronto a integrare l&apos;AI nel tuo workflow?
             </p>
@@ -131,8 +103,8 @@ export default function ServicesSection() {
             <p className="text-sm text-muted-foreground mt-4">
               Nessun impegno, solo idee pratiche per il tuo business.
             </p>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </Container>
     </section>
   );

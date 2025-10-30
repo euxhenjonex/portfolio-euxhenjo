@@ -2,30 +2,9 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Container from "../layout/Container";
 import ImageSkeleton from "@/components/ui/ImageSkeleton";
 import TechStackBento from "@/components/ui/TechStackBento";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
 
 export default function AboutSection() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -33,21 +12,16 @@ export default function AboutSection() {
   return (
     <section id="about" className="section-padding overflow-hidden">
       <Container>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="animate-fade-in">
           {/* Section Title */}
-          <motion.div variants={itemVariants} className="text-center mb-12">
+          <div className="text-center mb-12">
             <h2 className="heading-lg mb-4">Chi Sono</h2>
-          </motion.div>
+          </div>
 
           {/* Content: 2 Columns Layout */}
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start max-w-6xl mx-auto">
             {/* Left: Professional Photo */}
-            <motion.div variants={itemVariants} className="relative w-full aspect-[3/4] max-w-md mx-auto">
+            <div className="relative w-full aspect-[3/4] max-w-md mx-auto">
               {/* Photo container */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden ring-1 ring-border/50 shadow-2xl">
                 {!imageLoaded && <ImageSkeleton />}
@@ -61,10 +35,10 @@ export default function AboutSection() {
                   priority
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* Right: Bio Text */}
-            <motion.div variants={itemVariants} className="space-y-6 w-full min-w-0">
+            <div className="space-y-6 w-full min-w-0">
               <div className="space-y-6">
                 <div className="space-y-6 body-base">
                   <p>
@@ -84,9 +58,9 @@ export default function AboutSection() {
                 {/* Bento Card - Tech Stack */}
                 <TechStackBento />
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

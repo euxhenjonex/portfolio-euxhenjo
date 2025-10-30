@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Search, PenTool, Code, TrendingUp, Check } from "lucide-react";
 import { process } from "@/lib/data";
 import Container from "../layout/Container";
@@ -12,53 +11,27 @@ const iconMap = {
   "trending-up": TrendingUp,
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export default function ProcessSection() {
   return (
     <section id="processo" className="section-padding">
       <Container>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="space-y-12"
-        >
+        <div className="space-y-12 animate-fade-in">
           {/* Section Title */}
-          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto">
             <h2 className="heading-lg mb-4">
               Come Lavoro
             </h2>
             <p className="body-lg">
               Un processo strutturato in 4 fasi per trasformare le tue idee in soluzioni AI funzionanti
             </p>
-          </motion.div>
+          </div>
 
           {/* Process Steps Grid */}
           <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {process.map((step) => {
               const Icon = iconMap[step.icon as keyof typeof iconMap];
               return (
-                <motion.div key={step.id} variants={itemVariants}>
+                <div key={step.id}>
                   <div className="card-elevated h-full p-6">
                     <div className="flex items-start gap-4 mb-4">
                       {/* Step Number */}
@@ -98,11 +71,11 @@ export default function ProcessSection() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
