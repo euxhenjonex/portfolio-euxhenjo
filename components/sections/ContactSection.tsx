@@ -21,7 +21,7 @@ export default function ContactSection() {
     }
   };
   return (
-    <section id="contact" className="section-padding bg-muted/30">
+    <section id="contact" className="section-padding">
       <Container>
         <motion.div
           initial={{ opacity: 0 }}

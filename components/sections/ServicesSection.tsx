@@ -17,7 +17,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="section-padding bg-muted/30">
+    <section id="services" className="section-padding">
       <Container>
         <div className="space-y-12 animate-fade-in">
           {/* Section Title */}

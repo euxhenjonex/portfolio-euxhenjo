@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="section-padding bg-muted/30">
+    <section id="testimonials" className="section-padding">
       <Container>
         <motion.div
           initial="hidden"

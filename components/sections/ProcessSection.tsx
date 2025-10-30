@@ -13,7 +13,7 @@ const iconMap = {
 
 export default function ProcessSection() {
   return (
-    <section id="processo" className="section-padding bg-muted/30">
+    <section id="processo" className="section-padding">
       <Container>
         <div className="space-y-12 animate-fade-in">
           {/* Section Title */}

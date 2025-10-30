@@ -10,7 +10,7 @@ export default function AboutSection() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
-    <section id="about" className="section-padding bg-muted/30 overflow-hidden">
+    <section id="about" className="section-padding overflow-hidden">
       <Container>
         <div className="animate-fade-in">
           {/* Section Title */}

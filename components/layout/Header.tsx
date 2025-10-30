@@ -72,7 +72,7 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled || isMobileMenuOpen
-          ? "bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/15%),theme(backgroundColor.white/5%))] backdrop-blur-xl shadow-lg border-b border-white/20"
+          ? "bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/15%),theme(backgroundColor.white/5%))] md:bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/15%),theme(backgroundColor.white/5%))] bg-background/95 backdrop-blur-xl shadow-lg border-b border-white/20"
           : "bg-transparent border-transparent"
       )}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
