@@ -6,7 +6,6 @@ import AvailabilityBadge from "@/components/ui/AvailabilityBadge";
 import { personalInfo } from "@/lib/data";
 import Container from "../layout/Container";
 import AIAssistantInterface from "@/components/ui/AIAssistantInterface";
-import FloatingParticles from "@/components/ui/FloatingParticles";
 
 // Varianti di animazione leggere - ottimizzate per LCP
 const containerVariants = {
@@ -32,9 +31,6 @@ const itemVariants = {
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pb-20 px-4 overflow-hidden">
-      {/* Floating Particles Background */}
-      <FloatingParticles />
-      
       <Container className="relative z-10">
         <motion.div
           variants={containerVariants}
